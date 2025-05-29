@@ -1,0 +1,7 @@
+{
+    "phpunit.args": ["-c", "./phpunit.xml"],
+    "phpunit.command": "docker compose exec laravel",
+    "phpunit.paths": {
+        "${workspaceFolder}": "/var/www/"                // Map your ${workspaceFolder} to where it
+    }
+}
