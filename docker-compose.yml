@@ -1,0 +1,105 @@
+services:
+  laravel:
+    build:
+      context: .
+      dockerfile: ./docker/laravel/Dockerfile
+      target: development
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
+        XDEBUG_ENABLED: ${XDEBUG_ENABLED:-true}
+        XDEBUG_MODE: develop,coverage,debug,profile
+        XDEBUG_HOST: ${XDEBUG_HOST:-host.docker.internal}
+        XDEBUG_IDE_KEY: ${XDEBUG_IDE_KEY:-DOCKER}
+        XDEBUG_LOG: /dev/stdout
+        XDEBUG_LOG_LEVEL: 0
+    env_file:
+      - laravel/.env
+    user: "${UID:-1000}:${GID:-1000}"
+    volumes:
+      - ./laravel:/var/www/laravel
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    depends_on:
+      - redis
+      - postgres
+    networks:
+      - rbc-news
+
+  nuxt:
+    build:
+      dockerfile: ./docker/nuxt/Dockerfile
+    network_mode: host
+    volumes:
+      - ./nuxt/:/app
+    working_dir: /app
+    ports:
+      - '8000:3000'
+      - '24678:24678'
+    environment:
+      TZ: Europe/Moscow
+      NUXT_DEV_PORT: 8000
+    command: pnpm run dev
+
+  nginx:
+    image: nginx:1.27-alpine
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "8001:80"
+    volumes:
+      - ./laravel:/var/www/laravel
+      - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
+    environment:
+      TZ: Europe/Moscow
+    depends_on:
+      - laravel
+    networks:
+      - rbc-news
+
+  postgres:
+    image: postgres:17.4-alpine
+    environment:
+      POSTGRES_DB: rbc-news
+      POSTGRES_USER: rbc-news
+      POSTGRES_PASSWORD: rbc-news
+      PGDATA: /data/postgres
+      TZ: Europe/Moscow
+    volumes:
+      - rbc_news_postgres:/data/postgres
+    ports:
+      - "5433:5432"
+    networks:
+      - rbc-news
+
+  redis:
+    image: redis:alpine
+    restart: unless-stopped
+    networks:
+      - rbc-news
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  supervisor:
+    build:
+      context: .
+      dockerfile: ./docker/laravel/Dockerfile
+      target: supervisor
+    env_file:
+      - laravel/.env
+    volumes:
+      - ./laravel:/var/www/laravel
+    depends_on:
+      - redis
+    networks:
+      - rbc-news
+
+networks:
+  rbc-news:
+    driver: bridge
+
+volumes:
+  rbc_news_postgres:
