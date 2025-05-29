@@ -29,6 +29,9 @@ services:
   nuxt:
     build:
       dockerfile: ./docker/nuxt/Dockerfile
+    environment:
+      TZ: Europe/Moscow
+      NUXT_DEV_PORT: 8000
     network_mode: host
     volumes:
       - ./nuxt/:/app
@@ -36,13 +39,12 @@ services:
     ports:
       - '8000:3000'
       - '24678:24678'
-    environment:
-      TZ: Europe/Moscow
-      NUXT_DEV_PORT: 8000
     command: pnpm run dev
 
   nginx:
     image: nginx:1.27-alpine
+    environment:
+      TZ: Europe/Moscow
     restart: unless-stopped
     tty: true
     ports:
@@ -50,8 +52,6 @@ services:
     volumes:
       - ./laravel:/var/www/laravel
       - ./docker/nginx/conf.d/:/etc/nginx/conf.d/
-    environment:
-      TZ: Europe/Moscow
     depends_on:
       - laravel
     networks:
@@ -74,6 +74,8 @@ services:
 
   redis:
     image: redis:alpine
+    environment:
+      TZ: Europe/Moscow
     restart: unless-stopped
     networks:
       - rbc-news
@@ -88,6 +90,8 @@ services:
       context: .
       dockerfile: ./docker/laravel/Dockerfile
       target: supervisor
+    environment:
+      TZ: Europe/Moscow
     env_file:
       - laravel/.env
     volumes:
