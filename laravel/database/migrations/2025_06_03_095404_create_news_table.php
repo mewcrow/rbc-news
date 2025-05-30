@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('news_links', function (Blueprint $table) {
+        Schema::create('news', function (Blueprint $table) {
             $table->id();
-            $table->string('url')->unique();
-            $table->boolean('is_parsed');
+            $table->foreignId('page_link_id')->unique()->references('id')->on('page_links')->onDelete('cascade');
+            $table->string('title');
+            $table->string('image');
+            $table->text('text');
             $table->timestamps();
         });
     }
@@ -24,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('news_links');
+        Schema::dropIfExists('news');
     }
 };

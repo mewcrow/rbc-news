@@ -4,14 +4,14 @@ namespace Tests\Feature\Http\Controllers\Auth;
 
 use App\Models\User;
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class SessionControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
-    private $user;
+    private User $user;
 
     public function setUp(): void
     {

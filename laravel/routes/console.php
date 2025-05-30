@@ -1,13 +1,9 @@
 <?php
 
-use App\Jobs\ExampleJob;
-use Illuminate\Foundation\Inspiring;
-use Illuminate\Support\Facades\Artisan;
+use App\Console\Commands\CrawlRbcPagesCommand;
+use App\Jobs\CrawlRbcLinksJob;
 use Illuminate\Support\Facades\Schedule;
 
-Artisan::command('inspire', function () {
-    $this->comment(Inspiring::quote());
-})->purpose('Display an inspiring quote');
+Schedule::job(new CrawlRbcLinksJob)->everyTenMinutes();
+Schedule::command(CrawlRbcPagesCommand::class)->everyFiveMinutes();
 
-Schedule::command('inspire')->everyMinute();
-Schedule::job(new ExampleJob)->everyMinute();

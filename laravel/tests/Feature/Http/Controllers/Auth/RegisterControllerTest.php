@@ -3,21 +3,21 @@
 namespace Tests\Feature\Http\Controllers\Auth;
 
 use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 use App\Models\User;
 
 class RegisterControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
-    private static $validPayload;
+    private static array $validPayload;
 
     public static function setUpBeforeClass(): void
     {
         self::$validPayload = [
             'name' => 'user',
-            'email' => 'user@local',
+            'email' => '1231231user@local',
             'password' => 'password',
             'password_confirmation' => 'password',
         ];
@@ -25,14 +25,12 @@ class RegisterControllerTest extends TestCase
 
     public function test_user_can_register(): void
     {
-        $usersCount = User::count();
-
         $this
             ->withoutMiddleware(ValidateCsrfToken::class)
             ->postJson(route('auth.register'), self::$validPayload)
             ->assertOk();
 
-        $this->assertDatabaseCount('users', ++$usersCount);
+        $this->assertDatabaseHas('users', ['email' => self::$validPayload['email']]);
     }
 
     public function test_user_name_validation(): void
