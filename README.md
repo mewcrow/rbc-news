@@ -1,6 +1,7 @@
 - ```cp laravel/.env.example laravel/.env```
 - ```cp nuxt/.env.example nuxt/.env```
 - ```docker compose build```
+- ```docker compose run --rm --entrypoint="" laravel chmod -R 775 storage```
 - ```docker compose run --rm --entrypoint="" laravel composer install```
 - ```docker compose up -d postgres```
 - ```docker compose run --rm --entrypoint="" laravel php artisan migrate:fresh --seed```

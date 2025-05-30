@@ -3,6 +3,9 @@
   <component name="LaravelPint">
     <laravel_pint_settings>
       <LaravelPintConfiguration tool_path="$PROJECT_DIR$/laravel/vendor/bin/pint" />
+      <laravel_pint_by_interpreter asDefaultInterpreter="true" interpreter_id="98c7b0c8-0fcf-4c1a-bb8c-48417ea3ccad" tool_path="/var/www/laravel/vendor/bin/pint">
+        <option name="timeout" value="30000" />
+      </laravel_pint_by_interpreter>
     </laravel_pint_settings>
   </component>
   <component name="MessDetector">
@@ -19,6 +22,11 @@
   <component name="PHPCodeSnifferOptionsConfiguration">
     <option name="highlightLevel" value="WARNING" />
     <option name="transferred" value="true" />
+  </component>
+  <component name="PhpCSFixer">
+    <phpcsfixer_settings>
+      <phpcs_fixer_by_interpreter asDefaultInterpreter="true" interpreter_id="98c7b0c8-0fcf-4c1a-bb8c-48417ea3ccad" timeout="30000" />
+    </phpcsfixer_settings>
   </component>
   <component name="PhpCodeSniffer">
     <phpcs_settings>
@@ -149,7 +157,7 @@
     <interpreters>
       <interpreter id="98c7b0c8-0fcf-4c1a-bb8c-48417ea3ccad" name="laravel" home="docker-compose://DATA" auto="false" debugger_id="php.debugger.XDebug">
         <remote_data INTERPRETER_PATH="php" HELPERS_PATH="/opt/.phpstorm_helpers" VALID="true" RUN_AS_ROOT_VIA_SUDO="false" DOCKER_ACCOUNT_NAME="Docker" DOCKER_COMPOSE_SERVICE_NAME="laravel" DOCKER_REMOTE_PROJECT_PATH="/opt/project">
-          <type_data command="EXEC" />
+          <type_data command="RUN" />
           <dockerComposeConfigurationPaths>
             <item value="$PROJECT_DIR$/docker-compose.yml" />
           </dockerComposeConfigurationPaths>

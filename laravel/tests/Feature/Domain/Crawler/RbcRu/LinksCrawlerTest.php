@@ -1,13 +1,16 @@
 <?php
 
-namespace Feature\Domain\News\Crawlers;
+namespace Tests\Feature\Domain\Crawler\RbcRu;
 
-use App\Domain\News\Crawlers\LinksCrawler;
+use App\Domain\Crawler\RbcRu\LinksCrawler;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
 class LinksCrawlerTest extends TestCase
 {
-    public function test_links_are_extracted_from_main_page(): void
+    use DatabaseTransactions;
+
+    public function test_links_are_extracted_from_rbc_ru_main_page(): void
     {
         $html = file_get_contents(__DIR__.'/../../../../Fixtures/News/rbc_index.html');
 

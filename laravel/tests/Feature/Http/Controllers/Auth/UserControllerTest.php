@@ -2,16 +2,16 @@
 
 namespace Tests\Feature\Http\Controllers\Auth;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
 use App\Models\User;
 
 class UserControllerTest extends TestCase
 {
-    use RefreshDatabase;
+    use DatabaseTransactions;
 
-    private $user;
+    private User $user;
 
     public function setUp(): void
     {

@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Domain\News\Crawlers;
+namespace App\Domain\Crawler\RbcRu;
 
-use App\Models\NewsLink;
-use Illuminate\Support\Facades\DB;
+use App\Repository\PageLinkRepository;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -18,14 +17,7 @@ class LinksCrawler
 
     protected function saveLinks(array $links): int
     {
-        return DB::table('news_links')->insertOrIgnore(
-            collect($links)->map(fn($url) => [
-                'url' => $url,
-                'is_parsed' => false,
-                'created_at' => now(),
-                'updated_at' => now(),
-            ])->toArray()
-        );
+        return new PageLinkRepository()->storeUrls($links);
     }
 
     private function extractUrls(string $page): array
