@@ -2,30 +2,30 @@
   <div class="page-content border-dashed box-rounded flex flex-col justify-center items-center p-8">
     <div class="inputs-wrapper flex flex-col justify-center items-center">
       <InputValidation v-model="errors.name" class="mb-2">
-        <input v-model="registerPayload.name" class="input mb-2" type="text" placeholder="Name">
+        <input v-model="registerPayload.name" class="input mb-2" type="text" placeholder="Имя">
       </InputValidation>
       <InputValidation v-model="errors.email" class="mb-2">
         <input v-model="registerPayload.email" class="input mb-2" type="text" placeholder="E-mail">
       </InputValidation>
       <InputValidation v-model="errors.password" class="mb-2">
-        <input v-model="registerPayload.password" class="input mb-2" type="password" placeholder="Password">
+        <input v-model="registerPayload.password" class="input mb-2" type="password" placeholder="Пароль">
       </InputValidation>
       <InputValidation v-model="errors.password_confirmation" class="mb-2">
         <input
           v-model="registerPayload.password_confirmation"
           class="input mb-2"
           type="password"
-          placeholder="Password confirmation"
+          placeholder="Подверждение пароля"
         >
       </InputValidation>
-      <button @click="submit" class="btn btn-accent mb-8">
-        <span ref="loading-spinner" class="loading loading-spinner hidden"></span>
-        Register
+      <button class="btn btn-accent mb-8" @click="submit">
+        <span ref="loading-spinner" class="loading loading-spinner hidden"/>
+        Зарегистрироваться
       </button>
 
-      <div class="divider">OR</div>
+      <div class="divider">ИЛИ</div>
 
-      <NuxtLink to="/auth/login" class="link">Login</NuxtLink>
+      <NuxtLink to="/auth/login" class="link">Войти</NuxtLink>
     </div>
   </div>
 </template>
@@ -53,8 +53,8 @@
     await apiClient('api/register', { method: 'POST', body: registerPayload.value })
       .then(async () => {
         submitSpinner.value!.classList.add('hidden')
-        toast.success('Succesfully registered')
-        useSanctumAuth().refreshIdentity()
+        toast.success('Регистрация успешна')
+        await useSanctumAuth().refreshIdentity()
         await navigateTo('/')
       })
       .catch(e => {

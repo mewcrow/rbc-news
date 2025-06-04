@@ -5,15 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5605531c-5e58-4982-a347-65d4033c377d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawler.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/rbc-news.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rbc-news.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Console/Commands/CrawlRbcPagesCommand.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Console/Commands/CrawlRbcPagesCommand.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcPoliticsCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcRegularCrawler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/Shared/Config.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/Shared/Config.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/PageCrawlerStrategyResolverTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/PageCrawlerStrategyResolverTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcPoliticsCrawlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcRegularCrawlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Repository/PageLinkRepositoryTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Repository/PageLinkRepositoryTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcRegularCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcRegularCrawler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawler.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/News.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/app.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/components/InputValidation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/components/InputValidation.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/pages/auth/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/auth/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/pages/auth/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/auth/register.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/pnpm-lock.yaml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,11 +57,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="temp" />
-                    <option name="lastUsedInstant" value="1749020357" />
+                    <option name="lastUsedInstant" value="1749041063" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1749020342" />
+                    <option name="lastUsedInstant" value="1749039579" />
                   </RecentBranch>
                 </list>
               </option>
@@ -199,6 +210,8 @@
       <path value="$PROJECT_DIR$/laravel/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/laravel/vendor/masterminds/html5" />
       <path value="$PROJECT_DIR$/laravel/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/laravel/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/laravel/vendor/cviebrock/eloquent-sluggable" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -243,13 +256,20 @@
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "Docker Compose",
     "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker Compose",
     "git-widget-placeholder": "temp",
-    "last_opened_file_path": "/home/vitaly/Code/rbc-news",
+    "javascript.nodejs.core.library.configured.version": "22.14.0",
+    "javascript.nodejs.core.library.typings.version": "22.14.1",
+    "js.linters.configure.manually.selectedeslint": "true",
+    "last_opened_file_path": "/home/vitaly/Code/rbc-news/nuxt/eslint.config.mjs",
     "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.eslint": "/home/vitaly/Code/rbc-news/nuxt/node_modules/eslint",
+    "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php",
+    "nodejs_interpreter_path": "/home/vitaly/.nvm/versions/node/v22.14.0/bin/node",
+    "nodejs_package_manager_path": "pnpm",
+    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
+    "ts.external.directory.path": "/home/vitaly/Code/rbc-news/nuxt/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -311,12 +331,23 @@
       <workItem from="1748612309922" duration="4176000" />
       <workItem from="1748950426109" duration="17526000" />
       <workItem from="1749031908759" duration="339000" />
-      <workItem from="1749037454190" duration="2000000" />
+      <workItem from="1749037454190" duration="12338000" />
+      <workItem from="1749103891782" duration="279000" />
+      <workItem from="1749104182132" duration="166000" />
+      <workItem from="1749104357801" duration="957000" />
+      <workItem from="1749105328011" duration="509000" />
+      <workItem from="1749105848044" duration="448000" />
+      <workItem from="1749106306969" duration="227000" />
+      <workItem from="1749106544028" duration="1959000" />
+      <workItem from="1749108519233" duration="7127000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VueSettings">
+    <option name="useTypesFromServer" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

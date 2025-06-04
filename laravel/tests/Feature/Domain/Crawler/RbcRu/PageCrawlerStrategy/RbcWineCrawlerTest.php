@@ -1,6 +1,6 @@
 <?php
 
-namespace Feature\Domain\Crawler\RbcRu\PageCrawlerStrategy;
+namespace Tests\Feature\Domain\Crawler\RbcRu\PageCrawlerStrategy;
 
 use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
 use App\Models\PageLink;

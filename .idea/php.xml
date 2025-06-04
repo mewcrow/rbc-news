@@ -151,6 +151,8 @@
       <path value="$PROJECT_DIR$/laravel/vendor/mockery/mockery" />
       <path value="$PROJECT_DIR$/laravel/vendor/masterminds/html5" />
       <path value="$PROJECT_DIR$/laravel/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/laravel/vendor/cocur/slugify" />
+      <path value="$PROJECT_DIR$/laravel/vendor/cviebrock/eloquent-sluggable" />
     </include_path>
   </component>
   <component name="PhpInterpreters">

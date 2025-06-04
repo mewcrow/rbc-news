@@ -2,15 +2,16 @@
   <div class="layout-default container mx-auto py-4 flex flex-col">
     <header class="mb-4">
       <div class="top-bar">
-        <NuxtLink class="br-dashed link" to="/">Home</NuxtLink>
-        <div class="spacer"></div>
+        <NuxtLink class="br-dashed link" to="/">Главная</NuxtLink>
+        <div class="spacer"/>
         <NuxtLink v-if="!isAuthenticated" to="/auth/login" class="bl-dashed link">
-          Login
+          Войти
         </NuxtLink>
-        <a v-else class="bl-dashed link" @click.prevent="logout">Logout {{ `(${user!.name})` }}</a>
+        <a v-else class="bl-dashed link" @click.prevent="logout">Выйти {{ `(${user!.name})` }}</a>
       </div>
       <div class="header-logo">
-        <Icon name="ic:baseline-pedal-bike" />
+        <Icon name="ic:baseline-newspaper" />
+        Новости
       </div>
     </header>
 

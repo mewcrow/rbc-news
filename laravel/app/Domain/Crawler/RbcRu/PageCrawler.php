@@ -7,6 +7,7 @@ use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\PageCrawlerStrategyResolver;
 use App\Models\News;
 use App\Models\PageLink;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class PageCrawler
 {
@@ -22,7 +23,7 @@ class PageCrawler
     public function run(): void
     {
         $data = $this->strategy->run();
-        $created = News::query()->create($data);
+        $created = new News($data)->save();
 
         if ($created) {
             $this->link->update(['is_parsed' => true]);
