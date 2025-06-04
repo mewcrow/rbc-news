@@ -5,7 +5,7 @@ namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 
-class RbcPoliticsCrawler extends PageCrawlerStrategy
+class RbcWineCrawler extends PageCrawlerStrategy
 {
     protected Crawler $page;
 
@@ -19,9 +19,9 @@ class RbcPoliticsCrawler extends PageCrawlerStrategy
     protected function extractData(): array
     {
         $page_link_id = $this->pageLink->id;
-        $title = $this->page->filter('.article__header__title > h1')->text();
-        $image = $this->page->filter('.smart-image__img')->attr('src');
-        $text = $this->page->filter('.article__text.article__text_free')->text();
+        $title = $this->page->filter('h1.article-entry-title')->text();
+        $image = $this->page->filter('.article-image-img img')->attr('src');
+        $text = $this->page->filter('.body-2-bold')->text();
 
         return compact('page_link_id', 'title', 'image', 'text');
     }

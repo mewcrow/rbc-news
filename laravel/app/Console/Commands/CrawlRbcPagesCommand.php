@@ -2,13 +2,15 @@
 
 namespace App\Console\Commands;
 
+use App\Domain\Crawler\RbcRu\PageCrawler;
 use App\Jobs\CrawlRbcPageJob;
+use App\Models\PageLink;
 use App\Repository\PageLinkRepository;
 use Illuminate\Console\Command;
 
 class CrawlRbcPagesCommand extends Command
 {
-    protected $signature = 'crawl:rbc:pages';
+    protected $signature = 'crawl:rbc:pages {pageId?}';
 
     protected $description = 'Crawl rbc.ru pages';
 
@@ -19,6 +21,15 @@ class CrawlRbcPagesCommand extends Command
 
     public function handle(): void
     {
+        if ($this->argument('pageId')) {
+            $this->crawlLink();
+        } else {
+            $this->crawlUnparsedLinks();
+        }
+    }
+
+    public function crawlUnparsedLinks(): void
+    {
         $links = $this->links->getUnparsed();
 
         $links->each(function ($url) {
@@ -26,5 +37,13 @@ class CrawlRbcPagesCommand extends Command
         });
 
         $this->info("{$links->count()} page crawlers dispatched");
+    }
+
+    public function crawlLink(): void
+    {
+        $link = PageLink::query()->findOrFail($this->argument('pageId'));
+        new PageCrawler($link)->run();
+
+        $this->info("Crawled $link->url");
     }
 }
