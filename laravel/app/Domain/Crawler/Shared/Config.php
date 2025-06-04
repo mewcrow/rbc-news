@@ -2,14 +2,19 @@
 
 namespace App\Domain\Crawler\Shared;
 
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcPoliticsCrawler;
+use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
+use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
 
 class Config
 {
     public static array $strategiesMap = [
         [
-            'strategy' => RbcPoliticsCrawler::class,
-            'patterns' => ['rbc\.ru\/politics', 'rbc\.ru\/society']
+            'strategy' => RbcRegularCrawler::class,
+            'patterns' => ['https:\/\/www\.rbc\.ru\/(?!wine)']
+        ],
+        [
+            'strategy' => RbcWineCrawler::class,
+            'patterns' => ['https:\/\/www\.rbc\.ru\/wine']
         ],
     ];
 }

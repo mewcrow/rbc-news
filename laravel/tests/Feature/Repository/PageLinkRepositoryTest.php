@@ -22,9 +22,9 @@ class PageLinkRepositoryTest extends TestCase
     public function test_get_unparsed_returns_only_parseable_links(): void
     {
         PageLink::factory()->createMany([
-            ['url' => 'https://rbc.ru/politics/123'],
-            ['url' => 'https://rbc.ru/society/123'],
-            ['url' => 'https://rbc.ru/unparseable/123'],
+            ['url' => 'https://www.rbc.ru/politics/123'],
+            ['url' => 'https://www.rbc.ru/society/123'],
+            ['url' => 'https://www.unparseable.ru/unparseable/123'],
         ]);
 
         $result = new PageLinkRepository()->getUnparsed();
