@@ -6,6 +6,6 @@
 </template>
 
 <script setup lang="ts">
-  const props = defineProps(['class'])
+  const props = defineProps<{ class: string }>()
   const model = defineModel<string[]>({ default: [] })
 </script>

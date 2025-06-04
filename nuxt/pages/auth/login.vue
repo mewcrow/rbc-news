@@ -5,13 +5,13 @@
         <input v-model="credentials.email" class="input" type="text" placeholder="E-mail">
       </InputValidation>
       <InputValidation v-model="errors.password" class="mb-2">
-        <input v-model="credentials.password" class="input mb-2" type="password" placeholder="Password">
+        <input v-model="credentials.password" class="input mb-2" type="password" placeholder="Пароль">
       </InputValidation>
-      <button @click="submit" class="btn btn-accent mb-8">Log in</button>
+      <button class="btn btn-accent mb-8" @click="submit">Войти</button>
 
-      <div class="divider">OR</div>
+      <div class="divider">ИЛИ</div>
 
-      <NuxtLink to="/auth/register" class="link">Register</NuxtLink>
+      <NuxtLink to="/auth/register" class="link">Зарегистрироваться</NuxtLink>
     </div>
   </div>
 </template>

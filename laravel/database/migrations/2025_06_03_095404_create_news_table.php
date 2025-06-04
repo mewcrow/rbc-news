@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->foreignId('page_link_id')->unique()->references('id')->on('page_links')->onDelete('cascade');
+            $table->string('slug')->unique();
             $table->string('title');
             $table->string('image');
             $table->text('text');
