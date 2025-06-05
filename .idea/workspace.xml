@@ -5,26 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5605531c-5e58-4982-a347-65d4033c377d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/rbc-news.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/rbc-news.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcRegularCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcRegularCrawler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawler.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawler.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Models/News.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Models/News.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/composer.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/laravel/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/app.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/app.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/components/InputValidation.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/components/InputValidation.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/pages/auth/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/auth/login.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/pages/auth/register.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/auth/register.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/index.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/lang/en/auth.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/lang/en/auth.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/lang/en/pagination.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/lang/en/pagination.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/lang/en/passwords.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/lang/en/passwords.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/lang/en/validation.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/lang/en/validation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -212,6 +201,19 @@
       <path value="$PROJECT_DIR$/laravel/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/laravel/vendor/cocur/slugify" />
       <path value="$PROJECT_DIR$/laravel/vendor/cviebrock/eloquent-sluggable" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/native-locale-names" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/locale-list" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/native-currency-names" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dragon-code/support" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dragon-code/pretty-array" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dragon-code/contracts" />
+      <path value="$PROJECT_DIR$/laravel/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/laravel/vendor/archtechx/enums" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/publisher" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/native-country-names" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/lang" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/config" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/locales" />
     </include_path>
   </component>
   <component name="ProjectColorInfo">{
@@ -222,57 +224,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Constants": "false",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "PHPUnit.LinksCrawlerTest.executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_extractUrls_returns_15_links_when_getPage_is_mocked.executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_links_crawler_.executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_run_returns_15_links.executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_run_returns_15_when_15_links_extracted.executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_run_returns_15_when_getPage_returns_html_with_15_links.executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_that_true_is_true (1).executor": "Run",
-    "PHPUnit.LinksCrawlerTest.test_that_true_is_true.executor": "Run",
-    "PHPUnit.PageCrawlerStrategyResolverTest (1).executor": "Run",
-    "PHPUnit.PageCrawlerStrategyResolverTest.executor": "Run",
-    "PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_politics.executor": "Run",
-    "PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_society.executor": "Run",
-    "PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_wine.executor": "Run",
-    "PHPUnit.PageCrawlerStrategyResolverTest.test_throws_error_for_unknown_url_pattern.executor": "Run",
-    "PHPUnit.PageCrawlerTest.test_page_is_crawled.executor": "Run",
-    "PHPUnit.PageCrawlerTest.test_rbc_ru_politics_page_is_parsed.executor": "Run",
-    "PHPUnit.PageLinkRepositoryTest.executor": "Run",
-    "PHPUnit.PageLinkRepositoryTest.test_get_unparsed_returns_only_parseable_links.executor": "Run",
-    "PHPUnit.PageLinkRepositoryTest.test_get_unparsed_returns_unparsed_links.executor": "Run",
-    "PHPUnit.PageLinkRepositoryTest.test_store_url_method.executor": "Run",
-    "PHPUnit.RbcPoliticsCrawlerTest.test_successfully_crawled_politics_page.executor": "Run",
-    "PHPUnit.RbcWineCrawlerTest.executor": "Run",
-    "PHPUnit.RegisterControllerTest.test_user_can_register.executor": "Run",
-    "PHPUnit.UserControllerTest.executor": "Run",
-    "PHPUnit.UserControllerTest.test_get_user_endpoint.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm": "Docker Compose",
-    "credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm": "Docker Compose",
-    "git-widget-placeholder": "temp",
-    "javascript.nodejs.core.library.configured.version": "22.14.0",
-    "javascript.nodejs.core.library.typings.version": "22.14.1",
-    "js.linters.configure.manually.selectedeslint": "true",
-    "last_opened_file_path": "/home/vitaly/Code/rbc-news/nuxt/eslint.config.mjs",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "/home/vitaly/Code/rbc-news/nuxt/node_modules/eslint",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "/home/vitaly/.nvm/versions/node/v22.14.0/bin/node",
-    "nodejs_package_manager_path": "pnpm",
-    "settings.editor.selected.configurable": "settings.javascript.linters.eslint",
-    "ts.external.directory.path": "/home/vitaly/Code/rbc-news/nuxt/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Constants&quot;: &quot;false&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_extractUrls_returns_15_links_when_getPage_is_mocked.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_links_crawler_.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_run_returns_15_links.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_run_returns_15_when_15_links_extracted.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_run_returns_15_when_getPage_returns_html_with_15_links.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_that_true_is_true (1).executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.LinksCrawlerTest.test_that_true_is_true.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerStrategyResolverTest (1).executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerStrategyResolverTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_politics.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_society.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_wine.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerStrategyResolverTest.test_throws_error_for_unknown_url_pattern.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerTest.test_page_is_crawled.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageCrawlerTest.test_rbc_ru_politics_page_is_parsed.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageLinkRepositoryTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageLinkRepositoryTest.test_get_unparsed_returns_only_parseable_links.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageLinkRepositoryTest.test_get_unparsed_returns_unparsed_links.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.PageLinkRepositoryTest.test_store_url_method.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.RbcPoliticsCrawlerTest.test_successfully_crawled_politics_page.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.RbcWineCrawlerTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.RegisterControllerTest.test_user_can_register.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.UserControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.UserControllerTest.test_get_user_endpoint.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpCreateRemoteSdkForm&quot;: &quot;Docker Compose&quot;,
+    &quot;credentialsType com.jetbrains.php.remote.interpreter.ui.PhpInplaceEditRemoteSdkForm&quot;: &quot;Docker Compose&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;temp&quot;,
+    &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.14.0&quot;,
+    &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.14.1&quot;,
+    &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vitaly/Code/rbc-news/nuxt/eslint.config.mjs&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;/home/vitaly/Code/rbc-news/nuxt/node_modules/eslint&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;/home/vitaly/.nvm/versions/node/v22.14.0/bin/node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/home/vitaly/Code/rbc-news/nuxt/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="PHPUnit.RbcWineCrawlerTest">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/laravel/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
@@ -339,7 +341,7 @@
       <workItem from="1749105848044" duration="448000" />
       <workItem from="1749106306969" duration="227000" />
       <workItem from="1749106544028" duration="1959000" />
-      <workItem from="1749108519233" duration="7127000" />
+      <workItem from="1749108519233" duration="8229000" />
     </task>
     <servers />
   </component>

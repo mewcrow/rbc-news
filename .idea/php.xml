@@ -153,6 +153,19 @@
       <path value="$PROJECT_DIR$/laravel/vendor/symfony/dom-crawler" />
       <path value="$PROJECT_DIR$/laravel/vendor/cocur/slugify" />
       <path value="$PROJECT_DIR$/laravel/vendor/cviebrock/eloquent-sluggable" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/native-locale-names" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/locale-list" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/native-currency-names" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dragon-code/support" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dragon-code/pretty-array" />
+      <path value="$PROJECT_DIR$/laravel/vendor/dragon-code/contracts" />
+      <path value="$PROJECT_DIR$/laravel/vendor/symfony/polyfill-php81" />
+      <path value="$PROJECT_DIR$/laravel/vendor/archtechx/enums" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/publisher" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/native-country-names" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/lang" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/config" />
+      <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/locales" />
     </include_path>
   </component>
   <component name="PhpInterpreters">
