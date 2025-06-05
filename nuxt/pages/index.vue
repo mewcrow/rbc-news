@@ -9,17 +9,22 @@
         <p class="line-clamp-4">{{ news.text }}</p>
       </div>
     </div>
+    <InfiniteScroll api-url="/api/news" @page-fetched="page => displayPage(page as TNewsIndexResp)"/>
   </div>
 </template>
 
 <script lang="ts" setup>
-type TNewsIndexResp = {
-  data: {
-    title: string
-    slug: string
-    image: string
-    text: string
-  }[]
-}
-const { data: newsIndexResponse } = await useSanctumFetch<TNewsIndexResp>('/api/news')
+  type TNewsIndexResp = {
+    data: {
+      title: string
+      slug: string
+      image: string
+      text: string
+    }[]
+  }
+  const { data: newsIndexResponse } = await useSanctumFetch<TNewsIndexResp>('/api/news')
+
+  const displayPage = (page: TNewsIndexResp) => {
+    newsIndexResponse.value!.data = [...newsIndexResponse.value!.data, ...page.data]
+  }
 </script>
