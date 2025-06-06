@@ -1,8 +1,13 @@
 <template>
   <div>
     <div v-for="news in newsIndexResponse!.data" :key="news.slug" class="border-dashed mb-4 rounded-[var(--box-radius)] flex">
-      <div class="w-[12rem] shrink-0">
-        <img :src="news.image" alt="" class="w-[12rem] h-full object-cover">
+      <div v-if="news.image" class="w-[12rem] shrink-0">
+        <img
+          :src="news.image"
+          class="w-[12rem] h-full object-cover"
+          alt=""
+          loading="lazy"
+        >
       </div>
       <div class="p-2">
         <h4 class="font-bold pb-2 text-center text-lg">{{ news.title }}</h4>
