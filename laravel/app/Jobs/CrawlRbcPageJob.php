@@ -24,7 +24,7 @@ class CrawlRbcPageJob implements ShouldQueue
 
             Log::info("Page {$this->link->url} parsed");
         } catch (\Throwable $e) {
-            Log::error("Failed to crawl {$this->link->url} page");
+            Log::error("Failed to crawl {$this->link->id} {$this->link->url} page");
         }
     }
 }

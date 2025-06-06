@@ -20,7 +20,10 @@ class RbcRegularCrawler extends PageCrawlerStrategy
     {
         $page_link_id = $this->pageLink->id;
         $title = $this->page->filter('.article__header__title > h1')->text();
-        $image = $this->page->filter('.article__main-image__wrap .smart-image__img')->attr('src');
+        $image = '';
+        try {
+            $image = $this->page->filter('.article__main-image__wrap .smart-image__img')->attr('src');
+        } catch (\Throwable) {}
         $text = $this->page->filter('.article__text.article__text_free')->text();
 
         return compact('page_link_id', 'title', 'image', 'text');
