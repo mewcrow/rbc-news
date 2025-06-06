@@ -12,4 +12,9 @@ class NewsController extends Controller
     {
         return NewsResource::collection(News::query()->latest()->paginate());
     }
+
+    public function show(string $slug): NewsResource
+    {
+        return new NewsResource(News::query()->where('slug', $slug)->firstOrFail());
+    }
 }
