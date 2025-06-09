@@ -3,11 +3,13 @@
 namespace App\Models;
 
 use Cviebrock\EloquentSluggable\Sluggable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class News extends Model
 {
-    use Sluggable;
+    use Sluggable, HasFactory;
 
     protected $fillable = [
         'page_link_id',
@@ -24,5 +26,10 @@ class News extends Model
                 'source' => 'title'
             ]
         ];
+    }
+
+    public function pageLink(): BelongsTo
+    {
+        return $this->belongsTo(PageLink::class);
     }
 }
