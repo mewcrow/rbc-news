@@ -20,7 +20,7 @@ class RbcWineCrawler extends PageCrawlerStrategy
     {
         $page_link_id = $this->pageLink->id;
         $title = $this->page->filter('h1.article-entry-title')->text();
-        $image = $this->page->filter('.article__main-image__wrap img')->attr('src');
+        $image = $this->page->filter('.picture.article-image-img img')->attr('src');
         $text = '';
         $this->page->filter('.article-item.main-content p')->each(function($node) use (&$text) {
             $text .= $node->text();

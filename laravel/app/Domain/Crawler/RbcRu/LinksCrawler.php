@@ -4,6 +4,7 @@ namespace App\Domain\Crawler\RbcRu;
 
 use App\Repository\PageLinkRepository;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 use Symfony\Component\DomCrawler\Crawler;
 
 class LinksCrawler
@@ -26,7 +27,7 @@ class LinksCrawler
 
         $links = [];
         $crawler->each(function (Crawler $node) use (&$links) {
-            $links[] = $node->attr('href');
+            $links[] = Str::before($node->attr('href'), '?') ;
         });
 
         return $links;
