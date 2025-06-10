@@ -1,5 +1,7 @@
 <template>
   <div>
+    <LatestNewsFetcher v-model="newsIndexResponse!.data"/>
+
     <div
       v-for="news in newsIndexResponse!.data" :key="news.slug"
       class="border-dashed mb-4 rounded-[var(--box-radius)] flex cursor-pointer"

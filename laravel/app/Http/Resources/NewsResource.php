@@ -19,6 +19,7 @@ class NewsResource extends JsonResource
             'title' => $this->title,
             'image' => $this->image,
             'text' => $this->text,
+            'created_at' => $this->created_at->toIso8601String(),
         ];
     }
 }
