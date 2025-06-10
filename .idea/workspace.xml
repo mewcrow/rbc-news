@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5605531c-5e58-4982-a347-65d4033c377d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/nuxt/components/LatestNewsFetcher.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Resources/NewsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Resources/NewsResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/Auth/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/Auth/UserControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/NewsControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/NewsControllerTest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/layouts/default.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nuxt/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/index.vue" afterDir="false" />
-    </list>
+    <list default="true" id="5605531c-5e58-4982-a347-65d4033c377d" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -47,11 +36,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="temp" />
-                    <option name="lastUsedInstant" value="1749473514" />
+                    <option name="lastUsedInstant" value="1749553789" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1749472547" />
+                    <option name="lastUsedInstant" value="1749553774" />
                   </RecentBranch>
                 </list>
               </option>
@@ -277,7 +266,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;/home/vitaly/.nvm/versions/node/v22.14.0/bin/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.general&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/vitaly/Code/rbc-news/nuxt/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -367,6 +356,8 @@
       <workItem from="1749465179796" duration="197000" />
       <workItem from="1749468464740" duration="4580000" />
       <workItem from="1749548263177" duration="4861000" />
+      <workItem from="1749553585186" duration="12084000" />
+      <workItem from="1749644523010" duration="2197000" />
     </task>
     <servers />
   </component>

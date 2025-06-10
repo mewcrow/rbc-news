@@ -3,13 +3,10 @@
 namespace Tests\Feature\Http\Controllers;
 
 use App\Models\News;
-use App\Models\PageLink;
-use Illuminate\Foundation\Http\Middleware\ValidateCsrfToken;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Collection;
 use Illuminate\Testing\Fluent\AssertableJson;
 use Tests\TestCase;
-use App\Models\User;
 
 class NewsControllerTest extends TestCase
 {
@@ -36,6 +33,14 @@ class NewsControllerTest extends TestCase
                     ]
                 ]
             ]);
+    }
+
+    public function test_index_per_page_query_param_is_working(): void
+    {
+        $this
+            ->getJson(route('news.index', ['per-page' => 2]))
+            ->assertStatus(200)
+            ->assertJsonCount(2, 'data');
     }
 
     public function test_show_endpoint(): void

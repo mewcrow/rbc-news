@@ -8,6 +8,7 @@
 </template>
 
 <script setup lang="ts">
+  const { newsFetchInterval } = storeToRefs(useSettingsStore())
   const apiClient = useSanctumClient()
   const loading = ref(false);
   type TNews = {
@@ -28,7 +29,7 @@
   })
 
   if (import.meta.client) {
-    setInterval(loadLatestNews, 120000)
+    setInterval(loadLatestNews, newsFetchInterval.value * 1000)
   }
 
   async function loadLatestNews() {
