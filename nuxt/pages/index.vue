@@ -21,15 +21,18 @@
 </template>
 
 <script lang="ts" setup>
+  const { newsPerPage } = storeToRefs(useSettingsStore())
+
   type TNewsIndexResp = {
     data: {
       title: string
       slug: string
       image: string
       text: string
+      created_at: string
     }[]
   }
-  const { data: newsIndexResponse } = await useSanctumFetch<TNewsIndexResp>('/api/news')
+  const { data: newsIndexResponse } = await useSanctumFetch<TNewsIndexResp>(`/api/news?per-page=${newsPerPage.value}`)
 
   const renderPage = (page: TNewsIndexResp) => {
     newsIndexResponse.value!.data = [...newsIndexResponse.value!.data, ...page.data]

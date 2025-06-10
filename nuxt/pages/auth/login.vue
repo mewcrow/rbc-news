@@ -1,5 +1,5 @@
 <template>
-  <div class="page-content border-dashed flex flex-col items-center justify-center p-8 box-rounded">
+  <div class="page-content border-dashed flex flex-col items-center justify-center p-8 box-rounded mt-4">
     <div class="inputs-wrapper flex flex-col justify-center items-center">
       <InputValidation v-model="errors.email" class="mb-2">
         <input v-model="credentials.email" class="input" type="text" placeholder="E-mail">

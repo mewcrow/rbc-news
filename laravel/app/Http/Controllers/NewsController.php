@@ -9,9 +9,12 @@ use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class NewsController extends Controller
 {
-    public function index(): AnonymousResourceCollection
+    public function index(Request $request): AnonymousResourceCollection
     {
-        return NewsResource::collection(News::query()->latest()->paginate());
+        $queryParams = $request->validate(['per-page' => 'sometimes|integer']);
+        $perPage = array_key_exists('per-page', $queryParams) ? $queryParams['per-page'] : 20;
+
+        return NewsResource::collection(News::query()->latest()->paginate($perPage));
     }
 
     public function show(string $slug): NewsResource
@@ -21,7 +24,8 @@ class NewsController extends Controller
 
     public function latest(Request $request): AnonymousResourceCollection
     {
-        $after = $request->validate(['after' => 'required|date'])['after'];
+        $queryParams = $request->validate(['after' => 'required|date']);
+        $after = $queryParams['after'];
 
         return NewsResource::collection(
             News::query()

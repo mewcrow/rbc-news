@@ -13,17 +13,20 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/eslint',
-    ['@nuxtjs/google-fonts', {
+    [
+      '@nuxtjs/google-fonts', {
         download: true,
         families: {
           Ubuntu: true,
-        },
+      },
     }],
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
     '@nuxt/test-utils',
     'nuxt-auth-sanctum',
+    '@pinia/nuxt',
+    'pinia-plugin-persistedstate/nuxt',
   ],
 
   css: [

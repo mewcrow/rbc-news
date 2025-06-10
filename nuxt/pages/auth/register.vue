@@ -1,5 +1,5 @@
 <template>
-  <div class="page-content border-dashed box-rounded flex flex-col justify-center items-center p-8">
+  <div class="page-content border-dashed box-rounded flex flex-col justify-center items-center p-8 mt-4">
     <div class="inputs-wrapper flex flex-col justify-center items-center">
       <InputValidation v-model="errors.name" class="mb-2">
         <input v-model="registerPayload.name" class="input mb-2" type="text" placeholder="Имя">

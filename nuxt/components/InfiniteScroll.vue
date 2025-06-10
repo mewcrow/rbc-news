@@ -13,6 +13,7 @@
     pageFetched: [page: unknown]
   }>()
   const props = defineProps<{ apiUrl: string }>()
+  const { newsPerPage } = storeToRefs(useSettingsStore())
 
   if (import.meta.client) {
     window.addEventListener('scroll', () => {
@@ -26,7 +27,7 @@
 
   async function loadNextPage(page: number) {
     loading.value = true;
-    apiClient(`${props.apiUrl}?page=${page}`)
+    apiClient(`${props.apiUrl}?page=${page}&per-page=${newsPerPage.value}`)
       .then((res: { data: unknown[]}) => {
         emit('pageFetched', res as { data: unknown[] })
         loading.value = false
