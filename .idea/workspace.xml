@@ -5,8 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5605531c-5e58-4982-a347-65d4033c377d" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nuxt/components/LatestNewsFetcher.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Controllers/NewsController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/app/Http/Resources/NewsResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/app/Http/Resources/NewsResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/Auth/UserControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/Auth/UserControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/NewsControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/NewsControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/layouts/default.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/layouts/default.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nuxt/pages/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/nuxt/pages/index.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,11 +47,11 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="temp" />
-                    <option name="lastUsedInstant" value="1749451789" />
+                    <option name="lastUsedInstant" value="1749473514" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="master" />
-                    <option name="lastUsedInstant" value="1749451759" />
+                    <option name="lastUsedInstant" value="1749472547" />
                   </RecentBranch>
                 </list>
               </option>
@@ -209,6 +217,7 @@
       <path value="$PROJECT_DIR$/laravel/vendor/laravel-lang/locales" />
     </include_path>
   </component>
+  <component name="PhpXdebugProxy" ide_key="DOCKER" host="localhost" port="9003" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -219,7 +228,7 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Constants&quot;: &quot;false&quot;,
+    &quot;Constants&quot;: &quot;true&quot;,
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;PHPUnit.LinksCrawlerTest.executor&quot;: &quot;Run&quot;,
     &quot;PHPUnit.LinksCrawlerTest.test_extractUrls_returns_15_links_when_getPage_is_mocked.executor&quot;: &quot;Run&quot;,
@@ -229,6 +238,11 @@
     &quot;PHPUnit.LinksCrawlerTest.test_run_returns_15_when_getPage_returns_html_with_15_links.executor&quot;: &quot;Run&quot;,
     &quot;PHPUnit.LinksCrawlerTest.test_that_true_is_true (1).executor&quot;: &quot;Run&quot;,
     &quot;PHPUnit.LinksCrawlerTest.test_that_true_is_true.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.NewsControllerTest.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.NewsControllerTest.test_index_endpoint.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.NewsControllerTest.test_latest_endpoint_accepts_only_valid_date.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.NewsControllerTest.test_show_endpoint.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.NewsControllerTest.test_user_can_register.executor&quot;: &quot;Run&quot;,
     &quot;PHPUnit.PageCrawlerStrategyResolverTest (1).executor&quot;: &quot;Run&quot;,
     &quot;PHPUnit.PageCrawlerStrategyResolverTest.executor&quot;: &quot;Run&quot;,
     &quot;PHPUnit.PageCrawlerStrategyResolverTest.test_resolves_correct_strategy_for_rbc_politics.executor&quot;: &quot;Run&quot;,
@@ -254,7 +268,7 @@
     &quot;javascript.nodejs.core.library.configured.version&quot;: &quot;22.14.0&quot;,
     &quot;javascript.nodejs.core.library.typings.version&quot;: &quot;22.14.1&quot;,
     &quot;js.linters.configure.manually.selectedeslint&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/vitaly/Code/test.steners&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/vitaly/Code/netcat-docker/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -263,18 +277,22 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;/home/vitaly/.nvm/versions/node/v22.14.0/bin/node&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;pnpm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.webide.settings.project.settings.php&quot;,
     &quot;ts.external.directory.path&quot;: &quot;/home/vitaly/Code/rbc-news/nuxt/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="PHPUnit.NewsControllerTest.test_user_can_register">
+  <component name="RunManager" selected="PHPUnit.NewsControllerTest">
     <configuration name="Main" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner configuration_file="$PROJECT_DIR$/laravel/phpunit.xml" scope="XML" use_alternative_configuration_file="true" />
       <method v="2" />
     </configuration>
     <configuration name="NewsControllerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Tests\Feature\Http\Controllers\NewsControllerTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/NewsControllerTest.php" scope="Class" />
+      <method v="2" />
+    </configuration>
+    <configuration name="NewsControllerTest.test_latest_endpoint_accepts_only_valid_date" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
+      <TestRunner class="Tests\Feature\Http\Controllers\NewsControllerTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Http/Controllers/NewsControllerTest.php" method="test_latest_endpoint_accepts_only_valid_date" scope="Method" />
       <method v="2" />
     </configuration>
     <configuration name="NewsControllerTest.test_user_can_register" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
@@ -285,21 +303,17 @@
       <TestRunner class="Tests\Feature\Repository\PageLinkRepositoryTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Repository/PageLinkRepositoryTest.php" scope="Class" />
       <method v="2" />
     </configuration>
-    <configuration name="PageLinkRepositoryTest.test_get_unparsed_returns_only_parseable_links" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Tests\Feature\Repository\PageLinkRepositoryTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Repository/PageLinkRepositoryTest.php" method="test_get_unparsed_returns_only_parseable_links" scope="Method" />
-      <method v="2" />
-    </configuration>
     <configuration name="RbcWineCrawlerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner class="Feature\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawlerTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.NewsControllerTest.test_user_can_register" />
         <item itemvalue="PHPUnit.NewsControllerTest" />
+        <item itemvalue="PHPUnit.NewsControllerTest.test_latest_endpoint_accepts_only_valid_date" />
+        <item itemvalue="PHPUnit.NewsControllerTest.test_user_can_register" />
         <item itemvalue="PHPUnit.RbcWineCrawlerTest" />
         <item itemvalue="PHPUnit.PageLinkRepositoryTest" />
-        <item itemvalue="PHPUnit.PageLinkRepositoryTest.test_get_unparsed_returns_only_parseable_links" />
       </list>
     </recent_temporary>
   </component>
@@ -351,6 +365,8 @@
       <workItem from="1749463577226" duration="208000" />
       <workItem from="1749464458239" duration="8000" />
       <workItem from="1749465179796" duration="197000" />
+      <workItem from="1749468464740" duration="4580000" />
+      <workItem from="1749548263177" duration="4861000" />
     </task>
     <servers />
   </component>

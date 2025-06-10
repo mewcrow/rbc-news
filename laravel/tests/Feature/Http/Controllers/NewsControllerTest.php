@@ -29,7 +29,13 @@ class NewsControllerTest extends TestCase
         $this
             ->getJson(route('news.index'))
             ->assertStatus(200)
-            ->assertJsonIsArray('data');
+            ->assertJsonStructure([
+                'data' => [
+                    '*' => [
+                        'slug', 'title', 'image', 'text', 'created_at'
+                    ]
+                ]
+            ]);
     }
 
     public function test_show_endpoint(): void
@@ -44,5 +50,28 @@ class NewsControllerTest extends TestCase
                     ->where('data.text', $this->news->first()->text)
                     ->etc()
             );
+    }
+
+    public function test_latest_endpoint(): void
+    {
+        $this
+            ->getJson(route('news.latest', ['after' => now()->subHour()->toIso8601String()]))
+            ->assertStatus(200)
+            ->assertJsonStructure([
+                'data' => [
+                    '*' => [
+                        'slug', 'title', 'image', 'text', 'created_at'
+                    ]
+                ]
+            ]);
+    }
+
+    public function test_latest_endpoint_accepts_only_valid_date(): void
+    {
+        $this
+            ->getJson(route('news.latest', ['after' => 'invalid_date']))
+            ->assertInvalid([
+                'after' => __('validation.date', ['attribute' => 'after']),
+            ]);
     }
 }

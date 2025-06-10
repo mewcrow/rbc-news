@@ -253,6 +253,11 @@
   <component name="PhpStanOptionsConfiguration">
     <option name="transferred" value="true" />
   </component>
+  <component name="PhpStepFilterConfiguration">
+    <skipped_functions>
+      <skipped_function name="App\Http\Controllers\NewsController-&gt;show" />
+    </skipped_functions>
+  </component>
   <component name="PhpUnit">
     <phpunit_settings>
       <phpunit_by_interpreter interpreter_id="98c7b0c8-0fcf-4c1a-bb8c-48417ea3ccad" configuration_file_path="/var/www/laravel/phpunit.xml" custom_loader_path="/var/www/laravel/vendor/autoload.php" phpunit_phar_path="" use_configuration_file="true" />

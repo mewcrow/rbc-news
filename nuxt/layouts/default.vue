@@ -1,6 +1,6 @@
 <template>
   <div class="layout-default container mx-auto py-4 flex flex-col">
-    <header class="mb-4">
+    <header>
       <div class="top-bar">
         <NuxtLink class="br-dashed link" to="/">Главная</NuxtLink>
         <div class="spacer"/>
@@ -10,8 +10,10 @@
         <a v-else class="bl-dashed link" @click.prevent="logout">Выйти {{ `(${user!.name})` }}</a>
       </div>
       <div class="header-logo">
-        <Icon name="ic:baseline-newspaper" />
-        Новости
+        <NuxtLink to="/" class="flex">
+          <Icon name="ic:baseline-newspaper" />
+          <span class="inline-block">Новости</span>
+        </NuxtLink>
       </div>
     </header>
 
@@ -32,17 +34,14 @@
   .layout-default{
     min-height: 100vh;
 
-    .page-content {
-      flex-grow: 1;
-    }
-
     header {
       border: var(--dashed-border);
       border-radius: var(--box-radius);
 
       .header-logo {
         border-top: var(--dashed-border);
-        height: 6rem;
+        line-height: 1em;
+        height: 8rem;
       }
 
       .top-bar {
