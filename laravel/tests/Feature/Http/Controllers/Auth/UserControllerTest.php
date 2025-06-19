@@ -1,14 +1,6 @@
 <?php
 
 namespace Tests\Feature\Http\Controllers\Auth;
-assertStatus(200)
-            ->assertJsonStructure([
-                'data' => [
-                    '*' => [
-                        'slug', 'title', 'image', 'text', 'created_at'
-                    ]
-                ]
-            ]);
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Laravel\Sanctum\Sanctum;
 use Tests\TestCase;
