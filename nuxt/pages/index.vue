@@ -1,9 +1,9 @@
 <template>
   <div>
-    <LatestNewsFetcher v-model="newsIndexResponse!.data"/>
+    <LatestNewsFetcher />
 
     <div
-      v-for="news in newsIndexResponse!.data" :key="news.slug"
+      v-for="news in allNews" :key="news.slug"
       class="border-dashed mb-4 rounded-[var(--box-radius)] flex cursor-pointer"
       @click="navigateTo(`news/${news.slug}`)"
     >
@@ -16,25 +16,13 @@
       </div>
     </div>
 
-    <InfiniteScroll api-url="/api/news" @page-fetched="page => renderPage(page as TNewsIndexResp)"/>
+    <InfiniteScroll api-url="/api/news" v-model="allNews"/>
   </div>
 </template>
 
 <script lang="ts" setup>
-  const { newsPerPage } = storeToRefs(useSettingsStore())
+  const newsStore = useNewsStore()
+  const { news: allNews } = storeToRefs(newsStore)
 
-  type TNewsIndexResp = {
-    data: {
-      title: string
-      slug: string
-      image: string
-      text: string
-      created_at: string
-    }[]
-  }
-  const { data: newsIndexResponse } = await useSanctumFetch<TNewsIndexResp>(`/api/news?per-page=${newsPerPage.value}`)
-
-  const renderPage = (page: TNewsIndexResp) => {
-    newsIndexResponse.value!.data = [...newsIndexResponse.value!.data, ...page.data]
-  }
+  newsStore.fetchIndex()
 </script>
