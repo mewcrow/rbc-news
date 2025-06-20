@@ -12,6 +12,7 @@
   const { news, prefetchedNews } = storeToRefs(newsStore)
   const { newsFetchInterval } = storeToRefs(useSettingsStore())
   const loading = ref(false);
+  let interval: ReturnType<typeof setTimeout> | null = null;
 
   const lastNewsDate = computed(() => {
     if (!news.value!.length) return new Date().toISOString()
@@ -21,7 +22,9 @@
   })
 
   if (import.meta.client) {
-    setInterval(async () => {
+    if (interval) clearInterval(interval)
+
+    interval = setInterval(async () => {
       loading.value = true
       await newsStore.fetchLatest(lastNewsDate.value)
       loading.value = false

@@ -13,6 +13,7 @@ export const useNewsStore = defineStore('news', {
     return {
       news: [] as TNews[],
       prefetchedNews: [] as TNews[],
+      nextPageIsLoading: false,
     }
   },
   actions: {
@@ -21,6 +22,14 @@ export const useNewsStore = defineStore('news', {
         `/api/news?page=${page}&per-page=${useSettingsStore().$state.newsPerPage}`
       )
       this.news = [...this.news, ...data.value!.data]
+    },
+    async loadNextPage(page = 1) {
+      this.nextPageIsLoading = true
+      const result = await useSanctumClient()<{ data: TNews[] }>(
+        `/api/news?page=${page}&per-page=${useSettingsStore().$state.newsPerPage}`
+      )
+      this.nextPageIsLoading = false
+      this.news = [...this.news, ...result.data]
     },
     async fetchLatest(after: string) {
       const apiClient = useSanctumClient()
