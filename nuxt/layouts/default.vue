@@ -1,6 +1,6 @@
 <template>
   <div class="drawer">
-    <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+    <input id="my-drawer" type="checkbox" class="drawer-toggle" >
     <div class="drawer-content">
       <div class="layout-default container mx-auto py-4 flex flex-col">
         <header>
@@ -32,7 +32,7 @@
     </div>
 
     <div class="drawer-side">
-      <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+      <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"/>
       <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 flex flex-col">
         <li><NuxtLink to="/">Главная</NuxtLink></li>
         <li><NuxtLink to="/settings">Настройки</NuxtLink></li>
