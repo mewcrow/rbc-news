@@ -22,12 +22,12 @@
   })
 
   if (import.meta.client) {
-    if (interval) clearInterval(interval)
-
     interval = setInterval(async () => {
       loading.value = true
       await newsStore.fetchLatest(lastNewsDate.value)
       loading.value = false
     }, newsFetchInterval.value * 1000)
   }
+
+  onBeforeUnmount(() => clearInterval(interval as ReturnType<typeof setTimeout>))
 </script>

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
+namespace App\Domain\Crawler\Shared;
 
+use App\Domain\Crawler\Shared\PageCrawlerStrategy;
 use App\Domain\Crawler\Shared\Config;
 use InvalidArgumentException;
 
