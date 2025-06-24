@@ -22,6 +22,7 @@ class NewsFactory extends Factory
             'title' => fake()->sentence(),
             'image' => fake()->url(),
             'text' => fake()->paragraph(),
+            'rating' => random_int(1, 10),
         ];
     }
 }

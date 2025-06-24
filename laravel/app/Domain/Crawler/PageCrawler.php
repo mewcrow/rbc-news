@@ -1,13 +1,12 @@
 <?php
 
-namespace App\Domain\Crawler\RbcRu;
+namespace App\Domain\Crawler;
 
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\PageCrawlerStrategy;
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\PageCrawlerStrategyResolver;
+use App\Domain\Crawler\Shared\PageCrawlerStrategy;
+use App\Domain\Crawler\Shared\PageCrawlerStrategyResolver;
 use App\Models\News;
 use App\Models\PageLink;
 use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Str;
 
 class PageCrawler
 {
@@ -23,6 +22,7 @@ class PageCrawler
     public function run(): void
     {
         $data = $this->strategy->run();
+        $data = array_merge($data, ['rating' => random_int(1, 10)]);
         $created = new News($data)->save();
 
         if ($created) {

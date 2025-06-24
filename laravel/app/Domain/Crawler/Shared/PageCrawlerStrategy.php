@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
+namespace App\Domain\Crawler\Shared;
 
 use App\Models\PageLink;
 
