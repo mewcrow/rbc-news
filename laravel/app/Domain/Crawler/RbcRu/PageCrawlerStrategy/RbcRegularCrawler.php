@@ -2,6 +2,7 @@
 
 namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
 
+use App\Domain\Crawler\Shared\PageCrawlerStrategy;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 

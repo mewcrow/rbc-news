@@ -17,6 +17,7 @@ class News extends Model
         'title',
         'image',
         'text',
+        'rating',
     ];
 
     public function sluggable(): array

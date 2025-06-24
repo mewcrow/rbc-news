@@ -4,6 +4,7 @@ namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
 
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
+use App\Domain\Crawler\Shared\PageCrawlerStrategy;
 
 class RbcWineCrawler extends PageCrawlerStrategy
 {

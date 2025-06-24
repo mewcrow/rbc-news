@@ -5,18 +5,17 @@
 </template>
 
 <script setup lang="ts">
-  const loading = ref(false);
-  const _disabled = false
-  let page = 1;
   const { nextPageIsLoading } = storeToRefs(useNewsStore())
 
-  if (import.meta.client) {
-    window.addEventListener('scroll', () => {
-      if (loading.value || _disabled) return;
-      if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-        page++;
-        useNewsStore().loadNextPage(page)
-      }
-    });
+  const loadNextPage = () => {
+    if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+      useNewsStore().loadNextPage()
+    }
   }
+
+  if (import.meta.client) {
+    window.addEventListener('scroll', loadNextPage);
+  }
+
+  onBeforeUnmount(() => window.removeEventListener('scroll', loadNextPage))
 </script>

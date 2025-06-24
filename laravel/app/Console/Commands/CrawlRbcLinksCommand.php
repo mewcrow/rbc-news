@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Jobs\CrawlRbcLinksJob;
+use App\Domain\Crawler\RbcRu\LinksCrawler;
 use Illuminate\Console\Command;
 
 class CrawlRbcLinksCommand extends Command
@@ -13,8 +13,8 @@ class CrawlRbcLinksCommand extends Command
 
     public function handle(): void
     {
-        CrawlRbcLinksJob::dispatch();
+        $parsedQty = new LinksCrawler()->run();
 
-        $this->info('CrawlRbcLinksJob dispatched');
+        $this->info("$parsedQty links parsed");
     }
 }

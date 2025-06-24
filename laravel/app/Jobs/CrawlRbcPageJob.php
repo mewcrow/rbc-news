@@ -2,8 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Domain\Crawler\RbcRu\LinksCrawler;
-use App\Domain\Crawler\RbcRu\PageCrawler;
+use App\Domain\Crawler\PageCrawler;
 use App\Models\PageLink;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
