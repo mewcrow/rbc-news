@@ -3,6 +3,10 @@
 use App\Http\Controllers\NewsController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('news', [NewsController::class, 'index'])->name('news.index');;
-Route::get('news/latest', [NewsController::class, 'latest'])->name('news.latest');
-Route::get('news/{slug}', [NewsController::class, 'show'])->name('news.show');
+Route::controller(NewsController::class)->prefix('news')->name('news.')->group(function() {
+    Route::get('', 'index')->name('index');;
+    Route::get('latest', 'latest')->name('latest');
+    Route::get('{slug}', 'show')->name('show');
+    Route::patch('{news}', 'update')->name('update')->middleware('auth:sanctum');
+    Route::delete('{news}', 'destroy')->name('destroy')->middleware('auth:sanctum');
+});

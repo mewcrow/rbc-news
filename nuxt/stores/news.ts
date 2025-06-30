@@ -1,11 +1,10 @@
 import { defineStore } from 'pinia'
 
-type TNews = {
-  title: string
-  slug: string
-  image: string
-  text: string
-  created_at: string
+type TNewsResponse = {
+  data: TNews[]
+  meta: {
+    current_page: number
+  }
 }
 
 export const useNewsStore = defineStore('news', {
@@ -13,36 +12,37 @@ export const useNewsStore = defineStore('news', {
     return {
       news: [] as TNews[],
       prefetchedNews: [] as TNews[],
-      nextPageIsLoading: false,
-      lastLoadedPage: 1,
     }
   },
   actions: {
-    async fetchIndex(page = 1) {
-      const { data } = await useSanctumFetch<{ data: TNews[] }>(
-        `/api/news?page=${page}&per-page=${useSettingsStore().$state.newsPerPage}`
+    async fetchIndex() {
+      const { data } = await useSanctumFetch<TNewsResponse>(
+        `/api/news?per-page=${useSettingsStore().$state.newsPerPage}`
       )
       this.news = [...this.news, ...data.value!.data]
     },
-    async loadNextPage() {
-      this.nextPageIsLoading = true
-      const result = await useSanctumClient()<{ data: TNews[] }>(
-        `/api/news?page=${++this.lastLoadedPage}&per-page=${useSettingsStore().$state.newsPerPage}`
-      )
-      this.nextPageIsLoading = false
-      this.news = [...this.news, ...result.data]
-    },
     async fetchLatest(after: string) {
-      const apiClient = useSanctumClient()
-
-      const data = await apiClient<{ data: TNews[] }>(`/api/news/latest?after=${encodeURIComponent(after)}`)
+      const data = await useSanctumClient()<TNewsResponse>(`/api/news/latest?after=${encodeURIComponent(after)}`)
       if (data.data.length) {
         this.prefetchedNews = [...data.data, ...this.prefetchedNews]
       }
     },
-    showPrefetched() {
+    showLatest() {
       this.news = [...this.prefetchedNews, ...this.news]
       this.prefetchedNews = []
     },
+    async updateNews(payload: Partial<TNews>) {
+      const { id , ...body } = payload
+      const updated = (
+        await useSanctumClient()<{ data: TNews }>(`/api/news/${payload.id}`, { method: 'PATCH', body })
+      ).data
+      const idx = this.news.findIndex(n => n.id === updated.id)
+      this.news.splice(idx, 1, updated)
+    },
+    deleteNews(id: number) {
+      useSanctumClient()(`/api/news/${id}`, { method: 'DELETE' }).then(() => {
+        this.news.splice(this.news.findIndex(n => n.id === id), 1)
+      })
+    }
   }
 })

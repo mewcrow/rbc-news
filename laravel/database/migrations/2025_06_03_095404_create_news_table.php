@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->text('text');
             $table->tinyInteger('rating');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

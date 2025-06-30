@@ -12,7 +12,7 @@ class UserController extends Controller
     public function show(Request $request): JsonResponse
     {
         if (Auth::check()) {
-            return response()->json($request->user()->only('id', 'name', 'email'));
+            return response()->json($request->user()->only('id', 'name', 'email', 'role'));
         }
         return response()->json(null);
     }

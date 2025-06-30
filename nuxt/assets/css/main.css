@@ -19,9 +19,9 @@
 }
 
 .border-dashed {
-    border: var(--dashed-border);
+  border: var(--dashed-border);
 }
 
 .box-rounded {
-    border-radius: var(--box-radius);
+  border-radius: var(--box-radius);
 }

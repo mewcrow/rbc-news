@@ -5,11 +5,20 @@
 </template>
 
 <script setup lang="ts">
-  const { nextPageIsLoading } = storeToRefs(useNewsStore())
+  const props = defineProps<{ apiUrl: string, perPage: number }>()
+  const nextPageIsLoading = ref(false)
+  const model = defineModel()
+  let currentPage = 1
 
-  const loadNextPage = () => {
+  const loadNextPage = async <T>() => {
     if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-      useNewsStore().loadNextPage()
+      nextPageIsLoading.value = true
+      const result = await useSanctumClient()<{ data: T[], meta: { current_page: number } }>(
+        `${props.apiUrl}?page=${++currentPage}&per-page=${props.perPage}`
+      )
+      model.value = [...model.value as T[], ...result.data as T[]]
+      currentPage = result.meta.current_page
+      nextPageIsLoading.value = false
     }
   }
 
