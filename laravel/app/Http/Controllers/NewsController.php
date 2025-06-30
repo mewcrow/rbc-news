@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\DeleteNewsRequest;
+use App\Http\Requests\UpdateNewsRequest;
 use App\Http\Resources\NewsResource;
 use App\Models\News;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 use App\Repository\NewsRepository;
+use Illuminate\Http\JsonResponse;
 
 class NewsController extends Controller
 {
@@ -23,6 +26,20 @@ class NewsController extends Controller
         return new NewsResource(
             News::query()->where('slug', $slug)->firstOrFail()
         );
+    }
+
+    public function update(UpdateNewsRequest $request, News $news): NewsResource
+    {
+        $news->update($request->validated());
+
+        return new NewsResource($news->fresh());
+    }
+
+    public function destroy(DeleteNewsRequest $request, News $news): JsonResponse
+    {
+        $news->delete();
+
+        return response()->json(status: 200);
     }
 
     public function latest(Request $request): AnonymousResourceCollection

@@ -6,10 +6,11 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class News extends Model
 {
-    use Sluggable, HasFactory;
+    use Sluggable, HasFactory, SoftDeletes;
 
     protected $fillable = [
         'page_link_id',

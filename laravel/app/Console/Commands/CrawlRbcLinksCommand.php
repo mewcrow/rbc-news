@@ -15,6 +15,6 @@ class CrawlRbcLinksCommand extends Command
     {
         $parsedQty = new LinksCrawler()->run();
 
-        $this->info("$parsedQty links parsed");
+        $this->info("$parsedQty links crawled");
     }
 }

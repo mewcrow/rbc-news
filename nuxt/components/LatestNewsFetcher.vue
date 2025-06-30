@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center items-center h-12">
     <span v-if="loading" class="loading loading-bars loading-md" />
-    <span v-else-if="prefetchedNews.length" class="underline cursor-pointer" @click="newsStore.showPrefetched">
+    <span v-else-if="prefetchedNews.length" class="underline cursor-pointer" @click="newsStore.showLatest">
       Показать еще ({{ prefetchedNews.length }})
     </span>
   </div>

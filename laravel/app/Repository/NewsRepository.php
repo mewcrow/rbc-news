@@ -12,10 +12,7 @@ class NewsRepository
     public function getIndex(int $perPage = 20): AnonymousResourceCollection
     {
         return NewsResource::collection(
-            $this
-                ->withShortenedText()
-                ->paginate($perPage)
-                ->getCollection()
+            $this->withShortenedText()->paginate($perPage)
         );
     }
 
@@ -33,10 +30,12 @@ class NewsRepository
     private function withShortenedText(): Builder
     {
         return News::select(
+            'id',
             'slug',
             'title',
             'image',
             DB::raw('left(text, 200) AS text'),
+            'rating',
             'created_at',
         )
         ->latest();
