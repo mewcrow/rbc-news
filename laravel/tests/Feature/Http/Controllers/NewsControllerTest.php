@@ -3,6 +3,7 @@
 namespace Tests\Feature\Http\Controllers;
 
 use App\Models\News;
+use App\Models\User;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Illuminate\Support\Collection;
 use Illuminate\Testing\Fluent\AssertableJson;
@@ -13,12 +14,16 @@ class NewsControllerTest extends TestCase
     use DatabaseTransactions;
 
     private Collection $news;
+    private User $admin;
+    private User $regularUser;
 
     public function setUp(): void
     {
         parent::setUp();
 
         $this->news = News::factory()->count(5)->create();
+        $this->admin = User::firstWhere('role', 'admin');
+        $this->regularUser = User::firstWhere('role', 'regular');
     }
 
     public function test_index_endpoint(): void
@@ -78,5 +83,63 @@ class NewsControllerTest extends TestCase
             ->assertInvalid([
                 'after' => __('validation.date', ['attribute' => 'after']),
             ]);
+    }
+
+    public function test_update_endpoint__admin_can_update_news(): void
+    {
+        $this
+            ->actingAs($this->admin)
+            ->patchJson(
+                route('news.update', ['news' => $this->news[0]['id']]),
+                ['rating' => 8]
+            )
+            ->assertOk();
+
+        $this->assertDatabaseHas('news', ['id' => $this->news[0]['id'], 'rating' => 8]);
+    }
+
+    public function test_update_endpoint_regular_users_cannot_update_news(): void
+    {
+        $this
+            ->actingAs($this->regularUser)
+            ->patchJson(
+                route('news.update', ['news' => $this->news[0]['id']]),
+                ['rating' => 8]
+            )
+            ->assertForbidden();
+
+    }
+
+    public function test_update_endpoint_news_rating_validation(): void
+    {
+        $this
+            ->actingAs($this->admin)
+            ->patchJson(
+                route('news.update', ['news' => $this->news[0]['id']]),
+                ['rating' => 11]
+            )
+            ->assertInvalid('rating');
+    }
+
+    public function test_delete_endpoint_admin_can_delete_news(): void
+    {
+        $this
+            ->actingAs($this->admin)
+            ->deleteJson(
+                route('news.destroy', ['news' => $this->news[0]['id']]),
+            )
+            ->assertOk();
+
+        $this->assertSoftDeleted($this->news[0]);
+    }
+
+    public function test_delete_endpoint_only_admin_can_delete_news(): void
+    {
+        $this
+            ->actingAs($this->regularUser)
+            ->deleteJson(
+                route('news.destroy', ['news' => $this->news[0]['id']]),
+            )
+            ->assertForbidden();
     }
 }

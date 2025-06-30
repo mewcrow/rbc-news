@@ -5,13 +5,13 @@
       <div class="layout-default container mx-auto py-4 flex flex-col">
         <header>
           <div class="top-bar">
-            <label for="my-drawer" class="top-bar-item br-dashed drawer-button">
+            <label for="my-drawer" class="top-bar-item drawer-button cursor-pointer">
               <Icon class="inline mr-[0.2rem]" name="ic:baseline-menu"/>
               Меню
             </label>
-            <div class="spacer"/>
-            <div class="top-bar-item bl-dashed">
-              <Icon size="1.5rem" class="inline mr-[0.2rem]" name="ic:baseline-account-circle"/>
+            <div class="flex-1"/>
+            <div class="top-bar-item">
+              <Icon size="1rem" class="inline mr-[0.2rem]" name="ic:baseline-account-circle"/>
               <NuxtLink v-if="!isAuthenticated" to="/auth/login" class="link">
                 Войти
               </NuxtLink>
@@ -46,7 +46,7 @@
 
 <script setup lang="ts">
   const { logout, isAuthenticated } = useSanctumAuth()
-  const user = useSanctumUser<{ name: string }>()
+  const user = useSanctumUser<TUser>()
 
   onMounted(() => {
     if (import.meta.client) {
@@ -80,12 +80,8 @@
           display: flex;
           align-items: center;
           justify-content: center;
-          font-size: 1.2rem;
+          font-size: 1rem;
           padding: 0.15rem 0.5rem;
-        }
-
-        .spacer {
-          flex: 1;
         }
       }
 
