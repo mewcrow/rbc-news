@@ -1,10 +1,14 @@
 <?php
 
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\SessionController;
-use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Route;
+use Docs\OpenApiJsonBuilder;
+
 
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::prefix('swagger')->group(function() {
+    Route::get('/', fn() => view('swagger'));
+    Route::get('openapi.json', fn(OpenApiJsonBuilder $openApi) => response()->json($openApi->build()));
 });
