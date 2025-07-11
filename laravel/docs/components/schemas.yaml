@@ -1,0 +1,86 @@
+LoginRequest:
+  type: object
+  required:
+    - email
+    - password
+  properties:
+    email:
+      type: string
+      format: email
+      example: admin@local
+    password:
+      type: string
+      format: password
+      example: qwerty123
+
+SuccessResponse:
+  type: object
+  properties:
+    status:
+      type: string
+      description: Статус ответа
+      example: OK
+
+PaginationMeta:
+  type: object
+  properties:
+    current_page:
+      type: integer
+      example: 1
+    from:
+      type: integer
+      example: 1
+    last_page:
+      type: integer
+      example: 11
+    links:
+      type: array
+      items:
+        type: object
+        properties:
+          url:
+            type: string
+            example: http://localhost:8001/api/news?page=2
+          label:
+            type: string
+            example: 2
+          active:
+            type: boolean
+            example: false
+    path:
+      type: string
+      example: http://localhost:8001/api/news
+    per_page:
+      type: integer
+      example: 20
+    to:
+      type: integer
+      example: 20
+    total:
+      type: integer
+      example: 212
+
+News:
+  type: object
+  properties:
+    id:
+      type: integer
+      example: 1
+    slug:
+      type: string
+      example: wildberries-protestiruet-dostavku-gotovoy-edy-iz-restoranov
+    title:
+      type: string
+      example: Wildberries протестирует доставку готовой еды из ресторанов
+    image:
+      type: string
+      example: https://s0.rbk.ru/v6_top_pics/media/img/6/51/347519151687516.jpeg
+    text:
+      type: string
+      example: Пашинян заявил, что Армянская апостольская церковь захватила «антихристианская группировка» и что он намерен возглавить ее «освобождение». Под арестом находятся ряд священников ААЦ Никол Пашинян (Фото
+    rating:
+      type: integer
+      example: 5
+    created_at:
+      type: string
+      example: '2025-07-08T09:55:03+03:00'

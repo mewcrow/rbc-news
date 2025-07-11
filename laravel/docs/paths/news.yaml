@@ -1,0 +1,108 @@
+/api/news:
+  get:
+    tags: [News]
+    summary: Список новостей
+    responses:
+      '200':
+        description: Успешный запрос
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/News'
+                meta:
+                  $ref: '#/components/schemas/PaginationMeta'
+
+/api/news/latest:
+  get:
+    tags: [News]
+    summary: Последние новости
+    description: Новости, опубликованные после after (ESO 8601, urlEncoded), максимум 15
+    parameters:
+      - name: after
+        in: query
+        type: string
+        example: '2025-06-08T09:55:03+03:00'
+    responses:
+      '200':
+        description: Успешный запрос
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    $ref: '#/components/schemas/News'
+
+/api/news/{slug}:
+  get:
+    tags: [News]
+    summary: Получить новость по slug
+    parameters:
+      - name: slug
+        in: path
+        type: string
+        example: wildberries-protestiruet-dostavku-gotovoy-edy-iz-restoranov
+    responses:
+      '200':
+        description: Успешный запрос
+        content:
+          application/json:
+            schema:
+              type: object
+              $ref: '#/components/schemas/News'
+
+/api/news/{id}:
+  patch:
+    security:
+      - cookieAuth: []
+    tags: [News]
+    summary: Обновить новость
+    parameters:
+      - name: id
+        in: path
+        type: integer
+        example: 25
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              rating:
+                type: integer
+                example: 5
+                required: true
+    responses:
+      '200':
+        description: Успешный запрос
+        content:
+          application/json:
+            schema:
+      '401':
+        description: Не авторизован
+  delete:
+    tags: [News]
+    summary: Скрыть новость
+    parameters:
+      - name: id
+        in: path
+        type: integer
+        example: 25
+    responses:
+      '200':
+        description: Успешный запрос
+        content:
+          application/json:
+            schema:
+      '401':
+        description: Не авторизован
+
+

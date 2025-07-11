@@ -1,0 +1,103 @@
+/sanctum/csrf-cookie:
+  get:
+    tags: [Auth]
+    summary: Запрос csrf-токена
+    responses:
+      '200':
+        description: Успешный запрос
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SuccessResponse'
+
+/api/login:
+  post:
+    tags: [Auth]
+    summary: Вход в систему
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/LoginRequest'
+    responses:
+      '200':
+        description: Успешный вход
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SuccessResponse'
+      '422':
+        description: Неверное имя пользователя или пароль
+
+/api/logout:
+  post:
+    tags: [Auth]
+    summary: Выход
+    responses:
+      '200':
+        description: Успешный выход
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SuccessResponse'
+
+/api/register:
+  post:
+    tags: [User]
+    summary: Зарегистрироватся
+    requestBody:
+      required: true
+      content:
+        application/json:
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+                example: UserName
+              email:
+                type: string
+                example: user@email
+              password:
+                type: string
+                example: qwerty123
+              password_confirmation:
+                type: string
+                example: qwerty123
+    responses:
+      '200':
+        description: Успешный выход
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/SuccessResponse'
+
+/api/user:
+  get:
+    tags: [User]
+    summary: Получить текущего пользователя
+    responses:
+      '200':
+        description: Текущий пользователь или пустой массив
+        type: object
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                id:
+                  type: integer
+                  example: 1
+                name:
+                  type: string
+                  example: Admin
+                email:
+                  type: string
+                  example: admin@local
+                role:
+                  type: string
+                  example: admin
+
+
+
