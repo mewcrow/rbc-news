@@ -33,10 +33,10 @@
             class="px-2 br-dashed bl-dashed"
             @click.stop="updateRating($event, news, news.rating + 1)"
           >
-            <Icon class="br-dashed" name="ic:outline-plus"/>
+            <Icon name="ic:outline-plus"/>
           </div>
           <div
-            class="px-2 br-dashed"
+            class="px-2"
             @click.stop="useNewsStore().deleteNews(news.id)"
           >
             <Icon name="ic:delete"/>
