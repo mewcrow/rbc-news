@@ -10,5 +10,5 @@ Route::get('/', function () {
 
 Route::prefix('swagger')->group(function() {
     Route::get('/', fn() => view('swagger'));
-    Route::get('openapi.json', fn(OpenApiJsonBuilder $openApi) => response()->json($openApi->build()));
+    Route::get('openapi.json', fn(OpenApiJsonBuilder $openApi) => $openApi->build());
 });

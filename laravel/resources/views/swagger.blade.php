@@ -22,6 +22,11 @@
         if (match)
           request.headers['X-XSRF-TOKEN'] = decodeURIComponent(match.groups.token);
 
+
+        request.headers['Referer'] = 'http://localhost:8001/';
+        // request.headers['Origin'] = 'http://localhost:8001';
+        // request.headers['Host'] = 'localhost:8001';
+
         return request;
       },
     });
