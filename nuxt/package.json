@@ -36,6 +36,7 @@
   "devDependencies": {
     "@playwright/test": "^1.54.1",
     "@types/node": "^24.0.13",
+    "@vue/test-utils": "^2.4.6",
     "sass": "^1.87.0",
     "sass-embedded": "^1.87.0",
     "typescript": "^5.8.3"
