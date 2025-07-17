@@ -2,13 +2,19 @@
   <div class="page-content border-dashed box-rounded flex flex-col justify-center items-center p-8 mt-4">
     <div class="inputs-wrapper flex flex-col justify-center items-center">
       <InputValidation v-model="errors.name" class="mb-2">
-        <input v-model="registerPayload.name" class="input mb-2" type="text" placeholder="Имя">
+        <input v-model="registerPayload.name" class="input mb-2" type="text" placeholder="Имя" name="name">
       </InputValidation>
       <InputValidation v-model="errors.email" class="mb-2">
-        <input v-model="registerPayload.email" class="input mb-2" type="text" placeholder="E-mail">
+        <input v-model="registerPayload.email" class="input mb-2" type="text" placeholder="E-mail" name="email">
       </InputValidation>
       <InputValidation v-model="errors.password" class="mb-2">
-        <input v-model="registerPayload.password" class="input mb-2" type="password" placeholder="Пароль">
+        <input
+          v-model="registerPayload.password"
+          class="input mb-2"
+          type="password"
+          placeholder="Пароль"
+          name="password"
+        >
       </InputValidation>
       <InputValidation v-model="errors.password_confirmation" class="mb-2">
         <input
@@ -16,10 +22,11 @@
           class="input mb-2"
           type="password"
           placeholder="Подверждение пароля"
+          name="password_confirmation"
         >
       </InputValidation>
-      <button class="btn btn-accent mb-8" @click="submit">
-        <span ref="loading-spinner" class="loading loading-spinner hidden"/>
+      <button class="btn btn-accent mb-8" @click="submit" type="submit">
+        <span ref="loading-spinner" class="loading loading-spinner hidden" />
         Зарегистрироваться
       </button>
 

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex justify-center items-center h-20">
+  <div class="infinite-scroll flex justify-center items-center h-20">
     <span v-if="nextPageIsLoading" class="loading loading-bars loading-md" />
   </div>
 </template>

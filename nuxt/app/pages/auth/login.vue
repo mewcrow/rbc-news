@@ -2,12 +2,12 @@
   <div class="page-content border-dashed flex flex-col items-center justify-center p-8 box-rounded mt-4">
     <div class="inputs-wrapper flex flex-col justify-center items-center">
       <InputValidation v-model="errors.email" class="mb-2">
-        <input v-model="credentials.email" class="input" type="text" placeholder="E-mail">
+        <input v-model="credentials.email" class="input" type="text" placeholder="E-mail" name="email">
       </InputValidation>
       <InputValidation v-model="errors.password" class="mb-2">
-        <input v-model="credentials.password" class="input mb-2" type="password" placeholder="Пароль">
+        <input v-model="credentials.password" class="input mb-2" type="password" placeholder="Пароль" name="password">
       </InputValidation>
-      <button class="btn btn-accent mb-8" @click="submit">Войти</button>
+      <button class="btn btn-accent mb-8" type="submit" @click="submit">Войти</button>
 
       <div class="divider">ИЛИ</div>
 

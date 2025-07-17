@@ -1,5 +1,4 @@
-FROM node:22.14-alpine
-
+FROM mcr.microsoft.com/playwright:v1.54.0-noble
 ENV NUXT_HOST=0.0.0.0
 ENV NUXT_PORT=3000
 ENV TZ=Europe/Moscow
@@ -11,6 +10,6 @@ ENV COREPACK_ENABLE_DOWNLOAD_PROMPT=0
 
 RUN corepack enable
 
-USER node
+USER ubuntu
 
 WORKDIR /app
