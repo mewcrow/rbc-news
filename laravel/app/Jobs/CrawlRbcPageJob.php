@@ -2,7 +2,7 @@
 
 namespace App\Jobs;
 
-use App\Domain\Crawler\PageCrawler;
+use App\Domain\WebScraper\PageCrawler;
 use App\Models\PageLink;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;

@@ -293,7 +293,7 @@
       <method v="2" />
     </configuration>
     <configuration name="RbcWineCrawlerTest" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
-      <TestRunner class="Feature\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawlerTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" scope="Class" />
+      <TestRunner class="Feature\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcWineCrawlerTest" configuration_file="/var/www/laravel/phpunit.xml" file="$PROJECT_DIR$/laravel/tests/Feature/Domain/Crawler/RbcRu/PageCrawlerStrategy/RbcWineCrawlerTest.php" scope="Class" />
       <method v="2" />
     </configuration>
     <recent_temporary>

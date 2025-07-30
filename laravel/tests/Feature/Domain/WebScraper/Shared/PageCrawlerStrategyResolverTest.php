@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Feature\Domain\Crawler\Shared;
+namespace Tests\Feature\Domain\WebScraper\Shared;
 
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
-use App\Domain\Crawler\Shared\PageCrawlerStrategyResolver;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcRegularCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcWineCrawler;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategyResolver;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
@@ -44,7 +44,7 @@ class PageCrawlerStrategyResolverTest extends TestCase
     {
         $this->assertThrows(function() {
             new PageCrawlerStrategyResolver()->byPageLink(
-                PageLink::factory()->make(['url' => 'https://rbc.ru/foobaarr/123/123'])
+                PageLink::factory()->make(['url' => 'https://foo.bar/foobaarr/123/123'])
             );
         }, \InvalidArgumentException::class);
     }

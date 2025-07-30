@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Domain\Crawler\RbcRu\LinksCrawler;
+use App\Domain\WebScraper\RbcRu\LinksCrawler;
 use Illuminate\Console\Command;
 
 class CrawlRbcLinksCommand extends Command

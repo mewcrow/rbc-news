@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Domain\Crawler\RbcRu;
+namespace Tests\Feature\Domain\WebScraper\RbcRu;
 
-use App\Domain\Crawler\RbcRu\LinksCrawler;
+use App\Domain\WebScraper\RbcRu\LinksCrawler;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
 
