@@ -3,7 +3,7 @@
 namespace Tests\Feature\Domain\WebScraper;
 
 use App\Domain\WebScraper\PageCrawler;
-use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\Shared\AbstractPageCrawler;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
@@ -16,7 +16,7 @@ class PageCrawlerTest extends TestCase
     {
         $link = PageLink::factory()->create(['url' => 'https://rbc.ru/politics/123123']);
 
-        $mockStrategy = $this->createMock(PageCrawlerStrategy::class);
+        $mockStrategy = $this->createMock(AbstractPageCrawler::class);
         $mockStrategy->expects($this->once())
             ->method('run')
             ->willReturn([

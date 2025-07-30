@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Domain\WebScraper\RbcRu\PageCrawlerStrategy;
+namespace Tests\Feature\Domain\WebScraper\RbcRu\PageCrawler;
 
-use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcWineCrawler;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Symfony\Component\DomCrawler\Crawler;
@@ -17,6 +17,7 @@ class RbcWineCrawlerTest extends TestCase
         $html = file_get_contents(__DIR__.'/../../../../../Fixtures/News/rbc_wine_page.html');
 
         $mock = $this->getMockBuilder(RbcWineCrawler::class)
+            ->setConstructorArgs([new PageLink(['url' => 'https://example.com'])])
             ->onlyMethods(['setPage'])
             ->getMock();
 

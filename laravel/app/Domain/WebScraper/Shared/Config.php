@@ -2,8 +2,8 @@
 
 namespace App\Domain\WebScraper\Shared;
 
-use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
-use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcRegularCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcWineCrawler;
 
 class Config
 {

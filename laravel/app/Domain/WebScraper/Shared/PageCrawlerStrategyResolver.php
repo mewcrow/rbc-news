@@ -2,13 +2,13 @@
 
 namespace App\Domain\WebScraper\Shared;
 
-use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\Shared\AbstractPageCrawler;
 use App\Domain\WebScraper\Shared\Config;
 use InvalidArgumentException;
 
 class PageCrawlerStrategyResolver
 {
-    public function byPageLink($link): PageCrawlerStrategy
+    public function byPageLink($link): AbstractPageCrawler
     {
         $strategyMap = collect(Config::$strategiesMap)
             ->first(function ($config) use ($link) {
@@ -20,10 +20,9 @@ class PageCrawlerStrategyResolver
             throw new InvalidArgumentException("No strategy found for URL: {$link->url}");
         }
 
-        /** @var PageCrawlerStrategy $strategy */
-        $strategy = new $strategyMap['strategy'];
-        $strategy->pageLink = $link;
+        /** @var AbstractPageCrawler $strategy */
+        $crawler = new $strategyMap['strategy']($link);
 
-        return $strategy;
+        return $crawler;
     }
 }

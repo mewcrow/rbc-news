@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Domain\WebScraper\RbcRu\PageCrawlerStrategy;
+namespace App\Domain\WebScraper\RbcRu\PageCrawler;
 
+use App\Domain\WebScraper\Shared\AbstractPageCrawler;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
-use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
 
-class RbcWineCrawler extends PageCrawlerStrategy
+class RbcRegularCrawler extends AbstractPageCrawler
 {
     protected Crawler $page;
 
@@ -20,12 +20,12 @@ class RbcWineCrawler extends PageCrawlerStrategy
     protected function extractData(): array
     {
         $page_link_id = $this->pageLink->id;
-        $title = $this->page->filter('h1.article-entry-title')->text();
-        $image = $this->page->filter('.picture.article-image-img img')->attr('src');
-        $text = '';
-        $this->page->filter('.article-item.main-content p')->each(function($node) use (&$text) {
-            $text .= $node->text();
-        });
+        $title = $this->page->filter('.article__header__title > h1')->text();
+        $image = '';
+        try {
+            $image = $this->page->filter('.article__main-image__wrap .smart-image__img')->attr('src');
+        } catch (\Throwable) {}
+        $text = $this->page->filter('.article__text.article__text_free')->text();
 
         return compact('page_link_id', 'title', 'image', 'text');
     }

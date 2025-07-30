@@ -1,8 +1,8 @@
 <?php
 
-namespace Tests\Feature\Domain\WebScraper\RbcRu\PageCrawlerStrategy;
+namespace Tests\Feature\Domain\WebScraper\RbcRu\PageCrawler;
 
-use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcRegularCrawler;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Symfony\Component\DomCrawler\Crawler;
@@ -18,6 +18,7 @@ class RbcRegularCrawlerTest extends TestCase
 
         $mock = $this->getMockBuilder(RbcRegularCrawler::class)
             ->onlyMethods(['setPage'])
+            ->setConstructorArgs([new PageLink(['url' => 'https://example.com'])])
             ->getMock();
 
         $mock->expects($this->once())

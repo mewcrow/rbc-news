@@ -2,8 +2,8 @@
 
 namespace Tests\Feature\Domain\WebScraper\Shared;
 
-use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
-use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcRegularCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawler\RbcWineCrawler;
 use App\Domain\WebScraper\Shared\PageCrawlerStrategyResolver;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
