@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
+namespace App\Domain\WebScraper\RbcRu\PageCrawlerStrategy;
 
-use App\Domain\Crawler\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
 

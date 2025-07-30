@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Crawler\RbcRu;
+namespace App\Domain\WebScraper\RbcRu;
 
 use App\Repository\PageLinkRepository;
 use Illuminate\Support\Facades\Http;

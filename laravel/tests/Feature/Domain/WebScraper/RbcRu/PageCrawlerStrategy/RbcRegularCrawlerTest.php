@@ -1,22 +1,22 @@
 <?php
 
-namespace Tests\Feature\Domain\Crawler\RbcRu\PageCrawlerStrategy;
+namespace Tests\Feature\Domain\WebScraper\RbcRu\PageCrawlerStrategy;
 
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Symfony\Component\DomCrawler\Crawler;
 use Tests\TestCase;
 
-class RbcWineCrawlerTest extends TestCase
+class RbcRegularCrawlerTest extends TestCase
 {
     use DatabaseTransactions;
 
-    public function test_successfully_crawled_rbc_wine_page(): void
+    public function test_successfully_crawled_politics_page(): void
     {
-        $html = file_get_contents(__DIR__.'/../../../../../Fixtures/News/rbc_wine_page.html');
+        $html = file_get_contents(__DIR__.'/../../../../../Fixtures/News/rbc_politics_page.html');
 
-        $mock = $this->getMockBuilder(RbcWineCrawler::class)
+        $mock = $this->getMockBuilder(RbcRegularCrawler::class)
             ->onlyMethods(['setPage'])
             ->getMock();
 

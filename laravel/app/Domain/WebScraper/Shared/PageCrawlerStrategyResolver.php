@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Domain\Crawler\Shared;
+namespace App\Domain\WebScraper\Shared;
 
-use App\Domain\Crawler\Shared\PageCrawlerStrategy;
-use App\Domain\Crawler\Shared\Config;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\Shared\Config;
 use InvalidArgumentException;
 
 class PageCrawlerStrategyResolver

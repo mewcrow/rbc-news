@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Domain\Crawler\PageCrawler;
+use App\Domain\WebScraper\PageCrawler;
 use App\Jobs\CrawlRbcPageJob;
 use App\Models\PageLink;
 use App\Repository\PageLinkRepository;

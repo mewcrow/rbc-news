@@ -1,27 +1,27 @@
 <?php
 
-namespace App\Domain\Crawler;
+namespace App\Domain\WebScraper;
 
-use App\Domain\Crawler\Shared\PageCrawlerStrategy;
-use App\Domain\Crawler\Shared\PageCrawlerStrategyResolver;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategyResolver;
 use App\Models\News;
 use App\Models\PageLink;
 use Illuminate\Support\Facades\Log;
 
 class PageCrawler
 {
-    protected PageCrawlerStrategy $strategy;
+    protected PageCrawlerStrategy $parser;
 
     public function __construct(
         public PageLink $link,
-        ?PageCrawlerStrategy $strategy = null,
+        ?PageCrawlerStrategy $parser = null,
     ) {
-        $this->strategy = $strategy ?? new PageCrawlerStrategyResolver()->byPageLink($this->link);
+        $this->parser = $parser ?? new PageCrawlerStrategyResolver()->byPageLink($this->link);
     }
 
     public function run(): void
     {
-        $data = $this->strategy->run();
+        $data = $this->parser->run();
         $data = array_merge($data, ['rating' => random_int(1, 10)]);
         $created = new News($data)->save();
 

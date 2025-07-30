@@ -1,9 +1,9 @@
 <?php
 
-namespace Tests\Feature\Domain\Crawler;
+namespace Tests\Feature\Domain\WebScraper;
 
-use App\Domain\Crawler\PageCrawler;
-use App\Domain\Crawler\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\PageCrawler;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;

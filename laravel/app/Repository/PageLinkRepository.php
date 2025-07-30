@@ -2,7 +2,7 @@
 
 namespace App\Repository;
 
-use App\Domain\Crawler\Shared\Config;
+use App\Domain\WebScraper\Shared\Config;
 use App\Models\PageLink;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\DB;

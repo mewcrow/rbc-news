@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Domain\Crawler\Shared;
+namespace App\Domain\WebScraper\Shared;
 
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
 
 class Config
 {

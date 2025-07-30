@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Domain\Crawler\Shared;
+namespace App\Domain\WebScraper\Shared;
 
 use App\Models\PageLink;
 

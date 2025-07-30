@@ -1,10 +1,10 @@
 <?php
 
-namespace Tests\Feature\Domain\Crawler\Shared;
+namespace Tests\Feature\Domain\WebScraper\Shared;
 
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
-use App\Domain\Crawler\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
-use App\Domain\Crawler\Shared\PageCrawlerStrategyResolver;
+use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcRegularCrawler;
+use App\Domain\WebScraper\RbcRu\PageCrawlerStrategy\RbcWineCrawler;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategyResolver;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;

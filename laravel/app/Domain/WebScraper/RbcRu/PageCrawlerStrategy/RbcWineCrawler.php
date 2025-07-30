@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Domain\Crawler\RbcRu\PageCrawlerStrategy;
+namespace App\Domain\WebScraper\RbcRu\PageCrawlerStrategy;
 
 use Illuminate\Support\Facades\Http;
 use Symfony\Component\DomCrawler\Crawler;
-use App\Domain\Crawler\Shared\PageCrawlerStrategy;
+use App\Domain\WebScraper\Shared\PageCrawlerStrategy;
 
 class RbcWineCrawler extends PageCrawlerStrategy
 {
