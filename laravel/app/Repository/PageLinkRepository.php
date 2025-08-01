@@ -11,15 +11,14 @@ class PageLinkRepository
 {
     public function getUnparsed(int $limit = 25): Collection
     {
-        $configuredPatterns = collect(Config::$strategiesMap)
-            ->map(fn ($strategy) => implode('|', $strategy['patterns']))
+        $configuredPatterns = collect(Config::$sites)
+            ->map(fn ($site) => implode('|', $site['urlPatterns']))
             ->implode('|');
-        $configuredPatterns = "($configuredPatterns)";
 
         return PageLink::query()
             ->where('is_parsed', false)
             ->orderBy('created_at', 'DESC')
-            ->where('url', '~', $configuredPatterns)
+            ->where('url', '~', "($configuredPatterns)")
             ->limit($limit)
             ->get();
     }

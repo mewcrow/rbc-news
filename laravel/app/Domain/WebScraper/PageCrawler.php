@@ -10,11 +10,9 @@ use Illuminate\Support\Facades\Log;
 
 class PageCrawler
 {
-    protected AbstractPageCrawler $crawler;
-
     public function __construct(
         public PageLink $link,
-        ?AbstractPageCrawler $crawler = null,
+        protected ?AbstractPageCrawler $crawler = null,
     ) {
         $this->crawler = $crawler ?? new PageCrawlerStrategyResolver()->byPageLink($this->link);
     }

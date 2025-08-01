@@ -44,7 +44,7 @@ class PageCrawlerStrategyResolverTest extends TestCase
     {
         $this->assertThrows(function() {
             new PageCrawlerStrategyResolver()->byPageLink(
-                PageLink::factory()->make(['url' => 'https://rbc.ru/foobaarr/123/123'])
+                PageLink::factory()->make(['url' => 'https://foo.bar/foobaarr/123/123'])
             );
         }, \InvalidArgumentException::class);
     }

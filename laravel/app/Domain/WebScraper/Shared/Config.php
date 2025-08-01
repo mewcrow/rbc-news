@@ -4,17 +4,25 @@ namespace App\Domain\WebScraper\Shared;
 
 use App\Domain\WebScraper\RbcRu\PageCrawler\RbcRegularCrawler;
 use App\Domain\WebScraper\RbcRu\PageCrawler\RbcWineCrawler;
+use App\Domain\WebScraper\Shared\AbstractPageCrawler;
 
 class Config
 {
-    public static array $strategiesMap = [
+    /**
+     * @var array<
+     *   array{ title: string, parser: AbstractPageCrawler, urlPatterns: string[] }
+     * >
+     */
+    public static array $sites = [
         [
-            'strategy' => RbcRegularCrawler::class,
-            'patterns' => ['https:\/\/www\.rbc\.ru\/(?!wine)']
+            'title' => 'rbc.ru',
+            'parser' => RbcRegularCrawler::class,
+            'urlPatterns' => ['https:\/\/www\.rbc\.ru\/(?!wine)']
         ],
         [
-            'strategy' => RbcWineCrawler::class,
-            'patterns' => ['https:\/\/www\.rbc\.ru\/wine']
+            'title' => 'rbc.ru/wine',
+            'parser' => RbcWineCrawler::class,
+            'urlPatterns' => ['https:\/\/www\.rbc\.ru\/wine']
         ],
     ];
 }
