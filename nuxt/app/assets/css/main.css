@@ -12,14 +12,17 @@
 
 .br-dashed {
   border-right: var(--dashed-border);
+  border-opacity: 0.5;
 }
 
 .bl-dashed {
   border-left: var(--dashed-border);
+  border-opacity: 0.5;
 }
 
 .border-dashed {
   border: var(--dashed-border);
+  border-opacity: 0.5;
 }
 
 .box-rounded {
