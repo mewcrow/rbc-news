@@ -65,10 +65,12 @@
 
     header {
       border: var(--dashed-border);
+      border-color: var(--border-color);
       border-radius: var(--box-radius);
 
       .header-logo {
         border-top: var(--dashed-border);
+        border-color: var(--border-color);
         line-height: 1em;
         height: 9rem;
       }

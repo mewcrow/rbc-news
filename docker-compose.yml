@@ -47,7 +47,6 @@ services:
     image: nginx:1.27-alpine
     environment:
       TZ: Europe/Moscow
-    restart: unless-stopped
     tty: true
     ports:
       - "8001:80"
@@ -78,7 +77,6 @@ services:
     image: redis:alpine
     environment:
       TZ: Europe/Moscow
-    restart: unless-stopped
     networks:
       - rbc-news
     healthcheck:

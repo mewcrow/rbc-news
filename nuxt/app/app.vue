@@ -1,8 +1,11 @@
 <template>
   <NuxtLayout>
-    <NuxtPage/>
+    <NuxtPage />
+    <Toaster :toast-options="{
+      duration: 3000,
+      closeButton: true,
+    }"/>
   </NuxtLayout>
-  <Toaster rich-color />
 </template>
 
 <script setup lang="ts">
