@@ -31,7 +31,7 @@
       </div>
     </div>
 
-    <div class="drawer-side">
+    <nav class="drawer-side">
       <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"/>
       <ul class="menu bg-base-200 text-base-content min-h-full w-80 p-4 flex flex-col">
         <li><NuxtLink to="/">Главная</NuxtLink></li>
@@ -40,7 +40,7 @@
         <li v-if="isAuthenticated" @click.prevent="logout"><a>Выход</a></li>
         <li v-else><NuxtLink to="/auth/login">Вход</NuxtLink></li>
       </ul>
-    </div>
+    </nav>
   </div>
 </template>
 

@@ -1,6 +1,5 @@
-# FROM php:8.4-fpm-alpine3.21
-
 FROM php:8.4-fpm-alpine3.21 AS builder
+
 RUN apk update && apk add --no-cache \
     build-base \
     autoconf \
@@ -45,6 +44,7 @@ RUN apk update && apk add --no-cache \
     libzip-dev \
     fcgi \
     procps \
+    tzdata \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN curl -o /usr/local/bin/php-fpm-healthcheck \

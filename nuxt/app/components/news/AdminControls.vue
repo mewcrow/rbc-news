@@ -1,5 +1,5 @@
 <template>
-  <div class="news-rating border-dashed box-rounded">
+  <div class="news-admin-controls border-dashed box-rounded">
     <div
       class="px-2 br-dashed"
       @click.stop="updateRating($event, props.news, props.news.rating - 1)"
@@ -43,7 +43,7 @@
 </script>
 
 <style lang="css" scoped>
-  .news-rating {
+  .news-admin-controls {
     display: none;
     position: absolute;
     flex-direction: row;
