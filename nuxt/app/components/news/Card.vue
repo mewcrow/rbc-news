@@ -1,32 +1,33 @@
 <template>
-  <div
+  <article
     v-if="news"
     class="news flex flex-col flex-1/2 md:flex-1/3 lg:flex-1/4 border-dashed box-rounded cursor-pointer relative"
-    @click="navigateTo(`news/${news.slug}`)"
     ref="newsEl"
   >
-    <img
-      v-if="news.image"
-      :src="news.image"
-      class="w-full h-[12rem] object-cover"
-      :alt="news.title"
-      loading="lazy"
-    >
-    <div v-else class="w-full h-[12rem] flex items-center justify-center">
-      <Icon size="3em" name="ic:outline-image-not-supported" />
-    </div>
-    <div class="p-2">
-      <h4 class="font-bold mb-2 text-center text-lg line-clamp-2">{{ news.title }}</h4>
-      <p class="line-clamp-4">{{ news.text }}</p>
-    </div>
+    <NuxtLink :to="`news/${news.slug}`" >
+      <img
+        v-if="news.image"
+        :src="news.image"
+        class="w-full h-[12rem] object-cover"
+        :alt="news.title"
+        loading="lazy"
+      >
+      <div v-else class="w-full h-[12rem] flex items-center justify-center">
+        <Icon size="3em" name="ic:outline-image-not-supported" />
+      </div>
+      <div class="p-2">
+        <h4 class="font-bold mb-2 text-center text-lg line-clamp-2">{{ news.title }}</h4>
+        <p class="line-clamp-4">{{ news.text }}</p>
+      </div>
+    </NuxtLink>
 
-    <NewsRating
+    <NewsAdminControls
       v-if="user?.role === 'admin'"
-      class="news-rating"
+      class="news-admin-controls"
       :news
       @rating-changed="(newRating: number) => highlightBorder(newRating)"
     />
-  </div>
+  </article>
 </template>
 
 <script lang="ts" setup>
@@ -46,7 +47,7 @@
 
 <style lang="css" scoped>
   .news:hover {
-    .news-rating {
+    .news-admin-controls {
       display: flex;
     }
   }
