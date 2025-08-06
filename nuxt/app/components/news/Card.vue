@@ -6,11 +6,15 @@
     ref="newsEl"
   >
     <img
-      :src="news.image || '/pngtree-no-photo-icon-png-image_4420169.jpg'"
+      v-if="news.image"
+      :src="news.image"
       class="w-full h-[12rem] object-cover"
       :alt="news.title"
       loading="lazy"
     >
+    <div v-else class="w-full h-[12rem] flex items-center justify-center">
+      <Icon size="3em" name="ic:outline-image-not-supported" />
+    </div>
     <div class="p-2">
       <h4 class="font-bold mb-2 text-center text-lg line-clamp-2">{{ news.title }}</h4>
       <p class="line-clamp-4">{{ news.text }}</p>
@@ -62,7 +66,7 @@
       border-color: var(--color-success);
     }
     100% {
-      border-color: var(--color-primary-content);
+      border-color: var(--border-color);
     }
   }
 
@@ -71,7 +75,7 @@
       border-color: var(--color-error);
     }
     100% {
-      border-color: var(--color-primary-content);
+      border-color: var(--border-color);
     }
   }
 </style>

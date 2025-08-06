@@ -1,28 +1,28 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-    themes: light --default, dark --prefersdark;
+  themes: light --default, dark --prefersdark;
 }
 
 :root {
   font-family: Ubuntu;
-
-  --dashed-border: 1px dashed var(--color-primary-content);
+  --dashed-border: 1px dashed;
+  --border-color: oklch(from var(--color-primary-content) calc(l/2 + .1) c h);
   --box-radius: 0.25rem;
 }
 
+.border-dashed {
+  border: 1px dashed;
+  border-color: var(--border-color);
+}
+
 .br-dashed {
-  border-right: var(--dashed-border);
-  border-opacity: 0.5;
+  border-right: 1px dashed;
+  border-color: var(--border-color);
 }
 
 .bl-dashed {
-  border-left: var(--dashed-border);
-  border-opacity: 0.5;
-}
-
-.border-dashed {
-  border: var(--dashed-border);
-  border-opacity: 0.5;
+  border-left: 1px dashed;
+  border-color: var(--border-color);
 }
 
 .box-rounded {
