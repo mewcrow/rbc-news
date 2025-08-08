@@ -16,7 +16,8 @@ class News extends Model
         'page_link_id',
         'slug',
         'title',
-        'image',
+        'image_remote',
+        'image_local',
         'text',
         'rating',
     ];

@@ -5,13 +5,13 @@
     ref="newsEl"
   >
     <NuxtLink :to="`/news/${news.slug}`" >
-      <img
+      <NuxtImg
         v-if="news.image"
         :src="news.image"
         class="w-full h-[12rem] object-cover"
         :alt="news.title"
         loading="lazy"
-      >
+      />
       <div v-else class="w-full h-[12rem] flex items-center justify-center">
         <Icon size="3em" name="ic:outline-image-not-supported" />
       </div>

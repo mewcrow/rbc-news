@@ -10,6 +10,6 @@ abstract class AbstractPageCrawler
         public PageLink $pageLink
     ) {}
 
-    /** @return array{page_link_id: int, title: string, image: string, text: string} */
+    /** @return array{page_link_id: int, title: string, image_remote: string, text: string} */
     abstract public function run(): array;
 }

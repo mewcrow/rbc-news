@@ -28,6 +28,7 @@ Docker должен быть установлен.
   docker compose run --rm --entrypoint="" laravel composer install
   docker compose up -d postgres
   docker compose run --rm --entrypoint="" laravel php artisan migrate:fresh --seed
+  docker compose run --rm --entrypoint="" laravel php artisan storage:link
   docker compose run --rm nuxt pnpm install
   docker compose up
 ```

@@ -20,7 +20,7 @@ class NewsFactory extends Factory
         return [
             'page_link_id' => PageLink::factory(),
             'title' => fake()->sentence(),
-            'image' => fake()->url(),
+            'image_remote' => fake()->url(),
             'text' => fake()->paragraph(),
             'rating' => random_int(1, 10),
         ];

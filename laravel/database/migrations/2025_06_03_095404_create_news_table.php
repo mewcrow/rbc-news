@@ -16,7 +16,8 @@ return new class extends Migration
             $table->foreignId('page_link_id')->unique()->references('id')->on('page_links')->onDelete('cascade');
             $table->string('slug')->unique();
             $table->string('title');
-            $table->string('image')->nullable();
+            $table->string('image_remote')->nullable();
+            $table->string('image_local')->nullable();
             $table->text('text');
             $table->tinyInteger('rating');
             $table->softDeletes();

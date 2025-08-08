@@ -22,7 +22,7 @@ class RbcWineCrawler extends AbstractPageCrawler
     {
         $page_link_id = $this->pageLink->id;
         $title = $this->page->filter('h1.article-entry-title')->text();
-        $image = $this->page->filter('.picture.article-image-img img')->attr('src');
+        $image_remote = $this->page->filter('.picture.article-image-img img')->attr('src');
         $text = '';
 
         $paragraphs = [];
@@ -35,7 +35,7 @@ class RbcWineCrawler extends AbstractPageCrawler
             return $carry . "$item\n";
         }, '');
 
-        return compact('page_link_id', 'title', 'image', 'text');
+        return compact('page_link_id', 'title', 'image_remote', 'text');
     }
 
     protected function setPage(): Crawler

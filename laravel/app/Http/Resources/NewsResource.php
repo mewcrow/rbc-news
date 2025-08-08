@@ -18,10 +18,15 @@ class NewsResource extends JsonResource
             'id' => $this->id,
             'slug' => $this->slug,
             'title' => $this->title,
-            'image' => $this->image,
+            'image' => $this->getImageUrl(),
             'text' => $this->text,
             'rating' => $this->rating,
             'created_at' => $this->created_at->toIso8601String(),
         ];
+    }
+
+    private function getImageUrl(): ?string
+    {
+        return $this->image_local ? asset($this->image_local) : $this->image_remote;
     }
 }
