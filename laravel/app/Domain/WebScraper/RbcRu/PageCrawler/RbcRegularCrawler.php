@@ -25,7 +25,16 @@ class RbcRegularCrawler extends AbstractPageCrawler
         try {
             $image = $this->page->filter('.article__main-image__wrap .smart-image__img')->attr('src');
         } catch (\Throwable) {}
-        $text = $this->page->filter('.article__text.article__text_free')->text();
+
+        $paragraphs = [];
+        $this->page
+            ->filter('.article__text__overview span, .article__text_free p')
+            ->each(function ($node) use (&$paragraphs) {
+                return $paragraphs[] = $node->text();
+            });
+        $text = array_reduce($paragraphs, function ($carry, $item) {
+            return $carry . "$item\n";
+        }, '');
 
         return compact('page_link_id', 'title', 'image', 'text');
     }

@@ -4,7 +4,7 @@
     class="news flex flex-col flex-1/2 md:flex-1/3 lg:flex-1/4 border-dashed box-rounded cursor-pointer relative"
     ref="newsEl"
   >
-    <NuxtLink :to="`news/${news.slug}`" >
+    <NuxtLink :to="`/news/${news.slug}`" >
       <img
         v-if="news.image"
         :src="news.image"

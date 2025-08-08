@@ -89,7 +89,8 @@ ARG XDEBUG_MODE=develop,coverage,debug,profile
 ARG XDEBUG_HOST=host.docker.internal
 ARG XDEBUG_IDE_KEY=DOCKER
 ARG XDEBUG_LOG=/dev/stdout
-ARG XDEBUG_LOG_LEVEL=0
+ARG XDEBUG_LOG_LEVEL=7
+ARG XDEBUG_PORT=9003
 
 ENV XDG_CONFIG_HOME=/var/www/laravel/storage
 USER root
@@ -104,7 +105,8 @@ RUN if [ "${XDEBUG_ENABLED}" = "true" ]; then \
     echo "xdebug.log_level=${XDEBUG_LOG_LEVEL}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
     echo "xdebug.client_host=${XDEBUG_HOST}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
     echo "xdebug.start_with_request=yes" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini && \
-    echo "xdebug.remote_log=/var/www/laravel/storage/logs/xdebug.log" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ; \
+    echo "xdebug.log=/var/www/laravel/storage/logs/xdebug.log" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ; \
+    echo "xdebug.client_port=${XDEBUG_PORT}" >> /usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini ; \
 fi
 
 ARG UID=1000
