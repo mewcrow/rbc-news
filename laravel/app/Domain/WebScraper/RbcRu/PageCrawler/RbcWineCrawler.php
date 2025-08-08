@@ -24,9 +24,16 @@ class RbcWineCrawler extends AbstractPageCrawler
         $title = $this->page->filter('h1.article-entry-title')->text();
         $image = $this->page->filter('.picture.article-image-img img')->attr('src');
         $text = '';
-        $this->page->filter('.article-item.main-content p')->each(function($node) use (&$text) {
-            $text .= $node->text();
-        });
+
+        $paragraphs = [];
+        $this->page
+            ->filter('.article-item.main-content p')
+            ->each(function ($node) use (&$paragraphs) {
+                return $paragraphs[] = $node->text();
+            });
+        $text = array_reduce($paragraphs, function ($carry, $item) {
+            return $carry . "$item\n";
+        }, '');
 
         return compact('page_link_id', 'title', 'image', 'text');
     }

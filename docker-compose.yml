@@ -12,7 +12,6 @@ services:
         XDEBUG_HOST: ${XDEBUG_HOST:-host.docker.internal}
         XDEBUG_IDE_KEY: ${XDEBUG_IDE_KEY:-DOCKER}
         XDEBUG_LOG: /dev/stdout
-        XDEBUG_LOG_LEVEL: 0
     env_file:
       - laravel/.env
     user: "${UID:-1000}:${GID:-1000}"
