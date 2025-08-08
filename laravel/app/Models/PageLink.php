@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class PageLink extends Model
 {
@@ -15,8 +16,8 @@ class PageLink extends Model
         'is_parsed',
     ];
 
-    public function news(): BelongsTo
+    public function news(): HasOne
     {
-        return $this->belongsTo(News::class);
+        return $this->hasOne(News::class);
     }
 }

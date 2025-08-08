@@ -7,6 +7,9 @@ use App\Domain\WebScraper\Shared\AbstractPageCrawler;
 use App\Models\PageLink;
 use Illuminate\Foundation\Testing\DatabaseTransactions;
 use Tests\TestCase;
+use App\Domain\WebScraper\Shared\NewsImageDownloader;
+use App\Models\News;
+use Mockery;
 
 class PageCrawlerTest extends TestCase
 {
@@ -16,17 +19,21 @@ class PageCrawlerTest extends TestCase
     {
         $link = PageLink::factory()->create(['url' => 'https://rbc.ru/politics/123123']);
 
-        $mockStrategy = $this->createMock(AbstractPageCrawler::class);
-        $mockStrategy->expects($this->once())
+        $crawlerMock = $this->createMock(AbstractPageCrawler::class);
+        $crawlerMock->expects($this->once())
             ->method('run')
             ->willReturn([
                 'page_link_id' => $link->id,
                 'title' => 'Mocked Title',
-                'image' => fake()->url,
+                'image_remote' => fake()->url,
                 'text' => fake()->text,
             ]);
+        $imageDownloaderMock = $this->createMock(NewsImageDownloader::class);
+        $imageDownloaderMock->expects($this->once())
+            ->method('handle')
+            ->with($this->isInstanceOf(News::class));
 
-        $pageCrawler = new PageCrawler($link, $mockStrategy);
+        $pageCrawler = new PageCrawler($link, $crawlerMock, $imageDownloaderMock);
         $pageCrawler->run();
 
         $this->assertDatabaseHas('news', ['title' => 'Mocked Title']);

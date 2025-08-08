@@ -16,9 +16,10 @@ class PageLinkRepository
             ->implode('|');
 
         return PageLink::query()
+            ->whereDoesntHave('news')
             ->where('is_parsed', false)
-            ->orderBy('created_at', 'DESC')
             ->where('url', '~', "($configuredPatterns)")
+            ->orderBy('created_at', 'DESC')
             ->limit($limit)
             ->get();
     }

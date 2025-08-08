@@ -56,7 +56,7 @@ class NewsControllerTest extends TestCase
             ->assertJson(fn (AssertableJson $json) =>
                 $json->where('data.slug', $this->news->first()->slug)
                     ->where('data.title', $this->news->first()->title)
-                    ->where('data.image', $this->news->first()->image)
+                    ->where('data.image', $this->news->first()->image_remote)
                     ->where('data.text', $this->news->first()->text)
                     ->etc()
             );

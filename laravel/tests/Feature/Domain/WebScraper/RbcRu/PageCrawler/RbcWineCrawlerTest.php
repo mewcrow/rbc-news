@@ -29,7 +29,7 @@ class RbcWineCrawlerTest extends TestCase
         $result = $mock->run();
         $this->assertIsArray($result);
         $this->assertIsInt($result['page_link_id']);
-        $this->assertIsString($result['image']);
+        $this->assertIsString($result['image_remote']);
         $this->assertIsString($result['text']);
     }
 }

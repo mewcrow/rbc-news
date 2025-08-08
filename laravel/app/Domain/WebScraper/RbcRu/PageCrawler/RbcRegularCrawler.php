@@ -21,9 +21,9 @@ class RbcRegularCrawler extends AbstractPageCrawler
     {
         $page_link_id = $this->pageLink->id;
         $title = $this->page->filter('.article__header__title > h1')->text();
-        $image = '';
+        $image_remote = '';
         try {
-            $image = $this->page->filter('.article__main-image__wrap .smart-image__img')->attr('src');
+            $image_remote = $this->page->filter('.article__main-image__wrap .smart-image__img')->attr('src');
         } catch (\Throwable) {}
 
         $paragraphs = [];
@@ -36,7 +36,7 @@ class RbcRegularCrawler extends AbstractPageCrawler
             return $carry . "$item\n";
         }, '');
 
-        return compact('page_link_id', 'title', 'image', 'text');
+        return compact('page_link_id', 'title', 'image_remote', 'text');
     }
 
     protected function setPage(): Crawler

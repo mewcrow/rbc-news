@@ -12,6 +12,7 @@ build:
 	$(DOCKER_COMPOSE) run --rm --entrypoint="" laravel composer install
 	$(DOCKER_COMPOSE) up -d postgres
 	$(DOCKER_COMPOSE) run --rm --entrypoint="" laravel php artisan migrate:fresh --seed
+	$(DOCKER_COMPOSE) run --rm --entrypoint="" laravel php artisan storage:link
 	$(DOCKER_COMPOSE) run --rm nuxt pnpm install
 	$(DOCKER_COMPOSE) up -d
 
