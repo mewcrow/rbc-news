@@ -8,7 +8,7 @@ test.beforeEach(async ({ page }, testInfo) => {
 });
 
 
-test.describe('authentication', () => {
+test.describe('authentication guest', () => {
   test('user can log in', async ({ page }, testInfo) => {
     await mockRequest({
       page,
@@ -77,5 +77,27 @@ test.describe('authentication', () => {
 
     const console = getConsoleTracker(testInfo)
     await expect(console?.getErrors()).toHaveLength(1)
+  })
+})
+
+test.describe('authentication logged in', () => {
+  test.use({ storageState: 'tests/auth.json' })
+
+  test('user can log out', async ({ page }, testInfo) => {
+    await mockRequest({
+      page,
+      path: '**/api/logout**',
+      method: 'POST',
+      fulfillWith: { status: 'OK' },
+    })
+
+    await page.goto('/')
+    await waitForHydration(page)
+
+    await page.click('a:has-text("Выйти")')
+    await expect(page.locator('header')).toContainText('Войти')
+
+    const console = getConsoleTracker(testInfo)
+    console?.expectNoErrors();
   })
 })
