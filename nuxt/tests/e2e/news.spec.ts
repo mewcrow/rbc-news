@@ -39,7 +39,7 @@ test.describe('news page', () => {
 
     const news = await page.locator('.news', { hasText: /Рейтинг:\s*[2-9]/ }).first()
     await news.hover()
-    const minusBtn = news.locator('.news-rating > div:nth-child(1)')
+    const minusBtn = news.locator('.news-admin-controls > div:nth-child(1)')
     await expect(minusBtn).toBeVisible()
     await minusBtn.click()
     await expect(request.method).toBe('PATCH')
@@ -57,7 +57,7 @@ test.describe('news page', () => {
 
     const news = await page.locator('.news').first()
     await news.hover()
-    const deleteButton = news.locator('.news-rating > div:nth-child(4)')
+    const deleteButton = news.locator('.news-admin-controls > div:nth-child(4)')
     await expect(deleteButton).toBeVisible()
     await deleteButton.click()
     await expect(request.method).toBe('DELETE')
