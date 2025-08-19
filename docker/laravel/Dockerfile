@@ -147,12 +147,17 @@ RUN apk update && apk add --no-cache \
         supervisor && \
     chmod u+s /usr/bin/supervisord
 
-RUN touch crontab.tmp \
-    && echo '* * * * * cd /var/www/laravel && php artisan schedule:run >> /dev/null 2>&1' > crontab.tmp \
-    && crontab crontab.tmp \
-    && rm -rf crontab.tmp
+ARG UID=1000
+ARG GID=1000
+
+# создаём группу и пользователя
+RUN addgroup -g ${GID} www 2>/dev/null || true && \
+    adduser -D -u ${UID} -G www -s /bin/bash www
 
 COPY ./docker/laravel/supervisor.ini /etc/supervisor/conf.d/
+
+RUN echo '* * * * * cd /var/www/laravel && php artisan schedule:run >> /dev/null 2>&1' > /etc/crontabs/www \
+    && chown www:www /etc/crontabs/www
 
 ENTRYPOINT []
 

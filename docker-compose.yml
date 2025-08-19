@@ -89,6 +89,9 @@ services:
       context: .
       dockerfile: ./docker/laravel/Dockerfile
       target: supervisor
+      args:
+        UID: ${UID:-1000}
+        GID: ${GID:-1000}
     environment:
       TZ: Europe/Moscow
     env_file:
