@@ -70,6 +70,6 @@ Docker должен быть установлен.
 
 `docker compose exec laravel php artisan test` - тест бэкенда
 
-`docker compose exec nuxt pnpm exec playwright test` - тесе фронтенда
+`docker compose exec nuxt pnpm exec playwright test` - тест фронтенда
 
 `cd nuxt && pnpm exec playwright test --ui` - тест фронтенда в режиме ui (playwright должен быть установлен локально)
