@@ -1,3 +1,4 @@
 
 laravel/storage/psysh/psysh_history
 docker/postgres/dump.sql
+docker/postgres/dump.sql

@@ -15,6 +15,7 @@
         "laravel/horizon": "^5.32",
         "laravel/sanctum": "^4.0",
         "laravel/tinker": "^2.10.1",
+        "orchid/platform": "^14.52",
         "symfony/dom-crawler": "^7.3",
         "symfony/yaml": "^7.3"
     },
